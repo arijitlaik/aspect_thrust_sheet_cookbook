@@ -75,7 +75,7 @@ subsection Boundary velocity model
   subsection Function
     set Variable names      = x,y
     set Function constants  = cm=0.01, year=1, vel=-0.20
-    set Function expression = if (x==0e3, if(y<=1e3, vel*cm/year * (1.e3-y)/1.e3, 0), vel*cm/year); 0 
+    set Function expression = if (x==0e3, if (y<=1e3, if (y<=5e2,vel*cm/year, vel*cm/year * (1e3-y)/5e2), 0), vel*cm/year); 0 
   end
 end
 
