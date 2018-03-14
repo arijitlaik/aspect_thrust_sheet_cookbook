@@ -1,3 +1,4 @@
+
 # This cookbook is based off Ruh et al. (2013), which examines thrust
 # sheet development with 3D visco-plastic simulations. While the cookbook
 # is a 2D simulation, the boundary conditions, initial conditions,
@@ -64,6 +65,7 @@ end
 # more stable mesh when the deformation is large
 subsection Free surface
   set Surface velocity projection = normal
+  set Free surface stabilization theta = 0.5
 end
 
 # Velocity on left, right and bottom  boundaries are characterized by functions
