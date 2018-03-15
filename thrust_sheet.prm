@@ -72,6 +72,7 @@ end
 # more stable mesh when the deformation is large
 subsection Free surface
   set Surface velocity projection = normal
+  set Free surface stabilization theta = 1 
 end
 
 # Velocity on left, right and bottom  boundaries are characterized by functions
