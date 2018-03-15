@@ -1,0 +1,2412 @@
+-----------------------------------------------------------------------------
+-- This is ASPECT, the Advanced Solver for Problems in Earth's ConvecTion.
+--     . version 2.0.0-pre (master, c66ba1f7a)
+--     . using deal.II 8.5.1
+--     . using Trilinos 12.10.1
+--     . using p4est 2.0.0
+--     . running in DEBUG mode
+--     . running with 1 MPI process
+-----------------------------------------------------------------------------
+
+Number of active cells: 18,000 (on 1 levels)
+Number of degrees of freedom: 400,327 (145,442+18,361+18,361+72,721+72,721+72,721)
+
+Number of free surface degrees of freedom: 36722
+*** Timestep 0:  t=0 years
+   Solving mesh velocity system... 0 iterations.
+   Solving temperature system... 0 iterations.
+   Solving rigid_bottom system ... 0 iterations.
+   Solving low_friction system ... 0 iterations.
+   Solving plastic_cover system ... 0 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+9 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 1
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+45 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 2: 0.00162026
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+18 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 3: 0.000336473
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+4 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 4: 0.000177517
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 5: 8.80285e-05
+
+
+   Postprocessing:
+     Compositions min/max/mass: 0/1/1.45e+07 // 0/1/1.6e+07 // 0/1/1.495e+08
+     Temperature min/avg/max:   293 K, 293 K, 293 K
+     RMS, max velocity:         0.00169 m/year, 0.002 m/year
+     Writing graphical output:  output/solution/solution-00000
+
+
+
++---------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start    |      84.1s |            |
+|                                             |            |            |
+| Section                         | no. calls |  wall time | % of total |
++---------------------------------+-----------+------------+------------+
+| Assemble Stokes system          |         5 |      10.5s |        12% |
+| Assemble composition system     |         3 |      6.33s |       7.5% |
+| Assemble temperature system     |         1 |      2.06s |       2.4% |
+| Build Stokes preconditioner     |         5 |      7.73s |       9.2% |
+| Build composition preconditioner|         3 |     0.196s |      0.23% |
+| Build temperature preconditioner|         1 |    0.0104s |         0% |
+| Solve Stokes system             |         5 |      41.1s |        49% |
+| Solve composition system        |         3 |      0.03s |         0% |
+| Solve temperature system        |         1 |   0.00538s |         0% |
+| Free surface                    |         1 |     0.744s |      0.88% |
+| Initialization                  |         1 |      1.99s |       2.4% |
+| Postprocessing                  |         1 |      6.07s |       7.2% |
+| Setup dof systems               |         1 |      1.13s |       1.3% |
+| Setup initial conditions        |         1 |      2.43s |       2.9% |
++---------------------------------+-----------+------------+------------+
+
+*** Timestep 1:  t=4998.92 years
+   Solving mesh velocity system... 7 iterations.
+   Solving temperature system... 0 iterations.
+   Solving rigid_bottom system ... 10 iterations.
+   Solving low_friction system ... 10 iterations.
+   Solving plastic_cover system ... 9 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+3 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 4.70263e-05
+
+
+   Postprocessing:
+     Compositions min/max/mass: -0.005972/1.02/1.45e+07 // -0.01965/1.006/1.6e+07 // -0.005962/1.019/1.495e+08
+     Temperature min/avg/max:   293 K, 293.1 K, 293 K
+     RMS, max velocity:         0.00171 m/year, 0.002 m/year
+
+
+
++---------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start    |       106s |            |
+|                                             |            |            |
+| Section                         | no. calls |  wall time | % of total |
++---------------------------------+-----------+------------+------------+
+| Assemble Stokes system          |         6 |      12.8s |        12% |
+| Assemble composition system     |         6 |      13.8s |        13% |
+| Assemble temperature system     |         2 |      4.67s |       4.4% |
+| Build Stokes preconditioner     |         6 |      9.47s |         9% |
+| Build composition preconditioner|         6 |     0.418s |       0.4% |
+| Build temperature preconditioner|         2 |    0.0216s |         0% |
+| Solve Stokes system             |         6 |      43.6s |        41% |
+| Solve composition system        |         6 |     0.203s |      0.19% |
+| Solve temperature system        |         2 |    0.0116s |         0% |
+| Free surface                    |         2 |      1.67s |       1.6% |
+| Initialization                  |         1 |      1.99s |       1.9% |
+| Postprocessing                  |         2 |      6.64s |       6.3% |
+| Setup dof systems               |         1 |      1.13s |       1.1% |
+| Setup initial conditions        |         1 |      2.43s |       2.3% |
++---------------------------------+-----------+------------+------------+
+
+*** Timestep 2:  t=9998.08 years
+   Solving mesh velocity system... 7 iterations.
+   Solving temperature system... 0 iterations.
+   Solving rigid_bottom system ... 9 iterations.
+   Solving low_friction system ... 9 iterations.
+   Solving plastic_cover system ... 9 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 5.48944e-05
+
+
+   Postprocessing:
+     Compositions min/max/mass: -0.009908/1.039/1.45e+07 // -0.03868/1.01/1.601e+07 // -0.009897/1.038/1.496e+08
+     Temperature min/avg/max:   293 K, 293.2 K, 293 K
+     RMS, max velocity:         0.00174 m/year, 0.002 m/year
+
+
+
++---------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start    |       125s |            |
+|                                             |            |            |
+| Section                         | no. calls |  wall time | % of total |
++---------------------------------+-----------+------------+------------+
+| Assemble Stokes system          |         7 |        15s |        12% |
+| Assemble composition system     |         9 |      21.3s |        17% |
+| Assemble temperature system     |         3 |      7.19s |       5.7% |
+| Build Stokes preconditioner     |         7 |        11s |       8.8% |
+| Build composition preconditioner|         9 |     0.635s |      0.51% |
+| Build temperature preconditioner|         3 |    0.0323s |         0% |
+| Solve Stokes system             |         7 |      45.5s |        36% |
+| Solve composition system        |         9 |     0.367s |      0.29% |
+| Solve temperature system        |         3 |    0.0174s |         0% |
+| Free surface                    |         3 |      2.52s |         2% |
+| Initialization                  |         1 |      1.99s |       1.6% |
+| Postprocessing                  |         3 |      7.16s |       5.7% |
+| Setup dof systems               |         1 |      1.13s |       0.9% |
+| Setup initial conditions        |         1 |      2.43s |       1.9% |
++---------------------------------+-----------+------------+------------+
+
+*** Timestep 3:  t=14997.3 years
+   Solving mesh velocity system... 7 iterations.
+   Solving temperature system... 0 iterations.
+   Solving rigid_bottom system ... 9 iterations.
+   Solving low_friction system ... 9 iterations.
+   Solving plastic_cover system ... 9 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+3 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 8.69545e-05
+
+
+   Postprocessing:
+     Compositions min/max/mass: -0.009223/1.048/1.45e+07 // -0.048/1.018/1.601e+07 // -0.01771/1.048/1.496e+08
+     Temperature min/avg/max:   293 K, 293.3 K, 293 K
+     RMS, max velocity:         0.00177 m/year, 0.002 m/year
+     Writing graphical output:  output/solution/solution-00001
+
+
+
++---------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start    |       150s |            |
+|                                             |            |            |
+| Section                         | no. calls |  wall time | % of total |
++---------------------------------+-----------+------------+------------+
+| Assemble Stokes system          |         8 |      17.1s |        11% |
+| Assemble composition system     |        12 |      28.6s |        19% |
+| Assemble temperature system     |         4 |      9.38s |       6.2% |
+| Build Stokes preconditioner     |         8 |      12.7s |       8.5% |
+| Build composition preconditioner|        12 |     0.831s |      0.55% |
+| Build temperature preconditioner|         4 |    0.0427s |         0% |
+| Solve Stokes system             |         8 |      47.6s |        32% |
+| Solve composition system        |        12 |      0.52s |      0.35% |
+| Solve temperature system        |         4 |    0.0228s |         0% |
+| Free surface                    |         4 |      3.28s |       2.2% |
+| Initialization                  |         1 |      1.99s |       1.3% |
+| Postprocessing                  |         4 |      13.3s |       8.8% |
+| Setup dof systems               |         1 |      1.13s |      0.75% |
+| Setup initial conditions        |         1 |      2.43s |       1.6% |
++---------------------------------+-----------+------------+------------+
+
+*** Timestep 4:  t=19996.7 years
+   Solving mesh velocity system... 7 iterations.
+   Solving temperature system... 0 iterations.
+   Solving rigid_bottom system ... 9 iterations.
+   Solving low_friction system ... 9 iterations.
+   Solving plastic_cover system ... 9 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+3 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 0.000135851
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 2: 5.89557e-05
+
+
+   Postprocessing:
+     Compositions min/max/mass: -0.005441/1.049/1.45e+07 // -0.04932/1.029/1.601e+07 // -0.02883/1.049/1.497e+08
+     Temperature min/avg/max:   293 K, 293.3 K, 293 K
+     RMS, max velocity:         0.0018 m/year, 0.002 m/year
+
+
+
++---------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start    |       174s |            |
+|                                             |            |            |
+| Section                         | no. calls |  wall time | % of total |
++---------------------------------+-----------+------------+------------+
+| Assemble Stokes system          |        10 |      21.3s |        12% |
+| Assemble composition system     |        15 |      35.7s |        20% |
+| Assemble temperature system     |         5 |      11.6s |       6.6% |
+| Build Stokes preconditioner     |        10 |      15.9s |       9.1% |
+| Build composition preconditioner|        15 |      1.03s |      0.59% |
+| Build temperature preconditioner|         5 |    0.0531s |         0% |
+| Solve Stokes system             |        10 |      50.9s |        29% |
+| Solve composition system        |        15 |     0.673s |      0.39% |
+| Solve temperature system        |         5 |    0.0281s |         0% |
+| Free surface                    |         5 |      4.04s |       2.3% |
+| Initialization                  |         1 |      1.99s |       1.1% |
+| Postprocessing                  |         5 |      13.8s |       7.9% |
+| Setup dof systems               |         1 |      1.13s |      0.65% |
+| Setup initial conditions        |         1 |      2.43s |       1.4% |
++---------------------------------+-----------+------------+------------+
+
+*** Timestep 5:  t=24996.2 years
+   Solving mesh velocity system... 7 iterations.
+   Solving temperature system... 0 iterations.
+   Solving rigid_bottom system ... 9 iterations.
+   Solving low_friction system ... 9 iterations.
+   Solving plastic_cover system ... 9 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+3 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 0.00024341
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 2: 6.6864e-05
+
+
+   Postprocessing:
+     Compositions min/max/mass: -0.0006233/1.047/1.45e+07 // -0.05593/1.039/1.601e+07 // -0.03896/1.056/1.497e+08
+     Temperature min/avg/max:   293 K, 293.4 K, 293 K
+     RMS, max velocity:         0.00182 m/year, 0.002 m/year
+     Writing graphical output:  output/solution/solution-00002
+
+
+
++---------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start    |       205s |            |
+|                                             |            |            |
+| Section                         | no. calls |  wall time | % of total |
++---------------------------------+-----------+------------+------------+
+| Assemble Stokes system          |        12 |      25.8s |        13% |
+| Assemble composition system     |        18 |      42.9s |        21% |
+| Assemble temperature system     |         6 |      13.7s |       6.7% |
+| Build Stokes preconditioner     |        12 |        19s |       9.3% |
+| Build composition preconditioner|        18 |      1.22s |       0.6% |
+| Build temperature preconditioner|         6 |    0.0636s |         0% |
+| Solve Stokes system             |        12 |      54.5s |        27% |
+| Solve composition system        |        18 |     0.827s |       0.4% |
+| Solve temperature system        |         6 |    0.0339s |         0% |
+| Free surface                    |         6 |       4.8s |       2.3% |
+| Initialization                  |         1 |      1.99s |      0.97% |
+| Postprocessing                  |         6 |      19.9s |       9.7% |
+| Setup dof systems               |         1 |      1.13s |      0.55% |
+| Setup initial conditions        |         1 |      2.43s |       1.2% |
++---------------------------------+-----------+------------+------------+
+
+*** Timestep 6:  t=29995.8 years
+   Solving mesh velocity system... 7 iterations.
+   Solving temperature system... 0 iterations.
+   Solving rigid_bottom system ... 9 iterations.
+   Solving low_friction system ... 9 iterations.
+   Solving plastic_cover system ... 9 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+3 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 0.000310838
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+3 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 2: 7.72907e-05
+
+
+   Postprocessing:
+     Compositions min/max/mass: -0.001122/1.043/1.45e+07 // -0.06903/1.041/1.602e+07 // -0.04062/1.069/1.498e+08
+     Temperature min/avg/max:   293 K, 293.5 K, 293 K
+     RMS, max velocity:         0.00184 m/year, 0.002 m/year
+
+
+
++---------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start    |       230s |            |
+|                                             |            |            |
+| Section                         | no. calls |  wall time | % of total |
++---------------------------------+-----------+------------+------------+
+| Assemble Stokes system          |        14 |        30s |        13% |
+| Assemble composition system     |        21 |        50s |        22% |
+| Assemble temperature system     |         7 |      15.9s |       6.9% |
+| Build Stokes preconditioner     |        14 |      22.2s |       9.6% |
+| Build composition preconditioner|        21 |      1.41s |      0.62% |
+| Build temperature preconditioner|         7 |     0.074s |         0% |
+| Solve Stokes system             |        14 |      58.9s |        26% |
+| Solve composition system        |        21 |     0.984s |      0.43% |
+| Solve temperature system        |         7 |    0.0393s |         0% |
+| Free surface                    |         7 |      5.56s |       2.4% |
+| Initialization                  |         1 |      1.99s |      0.87% |
+| Postprocessing                  |         7 |      20.4s |       8.9% |
+| Setup dof systems               |         1 |      1.13s |      0.49% |
+| Setup initial conditions        |         1 |      2.43s |       1.1% |
++---------------------------------+-----------+------------+------------+
+
+*** Timestep 7:  t=34995.3 years
+   Solving mesh velocity system... 7 iterations.
+   Solving temperature system... 0 iterations.
+   Solving rigid_bottom system ... 9 iterations.
+   Solving low_friction system ... 9 iterations.
+   Solving plastic_cover system ... 9 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+5 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 0.00036011
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+1 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 2: 7.97065e-05
+
+
+   Postprocessing:
+     Compositions min/max/mass: -0.001464/1.04/1.45e+07 // -0.07713/1.037/1.602e+07 // -0.03703/1.077/1.498e+08
+     Temperature min/avg/max:   293 K, 293.6 K, 293 K
+     RMS, max velocity:         0.00185 m/year, 0.00201 m/year
+     Writing graphical output:  output/solution/solution-00003
+
+
+
++---------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start    |       260s |            |
+|                                             |            |            |
+| Section                         | no. calls |  wall time | % of total |
++---------------------------------+-----------+------------+------------+
+| Assemble Stokes system          |        16 |      34.3s |        13% |
+| Assemble composition system     |        24 |      57.2s |        22% |
+| Assemble temperature system     |         8 |      18.1s |         7% |
+| Build Stokes preconditioner     |        16 |      25.3s |       9.7% |
+| Build composition preconditioner|        24 |      1.61s |      0.62% |
+| Build temperature preconditioner|         8 |    0.0845s |         0% |
+| Solve Stokes system             |        16 |      62.9s |        24% |
+| Solve composition system        |        24 |      1.14s |      0.44% |
+| Solve temperature system        |         8 |    0.0446s |         0% |
+| Free surface                    |         8 |      6.32s |       2.4% |
+| Initialization                  |         1 |      1.99s |      0.77% |
+| Postprocessing                  |         8 |      26.3s |        10% |
+| Setup dof systems               |         1 |      1.13s |      0.44% |
+| Setup initial conditions        |         1 |      2.43s |      0.94% |
++---------------------------------+-----------+------------+------------+
+
+*** Timestep 8:  t=39994.9 years
+   Solving mesh velocity system... 7 iterations.
+   Solving temperature system... 0 iterations.
+   Solving rigid_bottom system ... 8 iterations.
+   Solving low_friction system ... 9 iterations.
+   Solving plastic_cover system ... 9 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+6 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 0.000405971
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+4 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 2: 0.000169102
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+3 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 3: 8.63055e-05
+
+
+   Postprocessing:
+     Compositions min/max/mass: -0.00147/1.036/1.45e+07 // -0.08581/1.043/1.602e+07 // -0.04336/1.086/1.499e+08
+     Temperature min/avg/max:   293 K, 293.7 K, 293 K
+     RMS, max velocity:         0.00185 m/year, 0.002 m/year
+
+
+
++---------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start    |       293s |            |
+|                                             |            |            |
+| Section                         | no. calls |  wall time | % of total |
++---------------------------------+-----------+------------+------------+
+| Assemble Stokes system          |        19 |      40.6s |        14% |
+| Assemble composition system     |        27 |      64.3s |        22% |
+| Assemble temperature system     |         9 |      20.3s |       6.9% |
+| Build Stokes preconditioner     |        19 |        30s |        10% |
+| Build composition preconditioner|        27 |      1.81s |      0.62% |
+| Build temperature preconditioner|         9 |    0.0948s |         0% |
+| Solve Stokes system             |        19 |      71.7s |        24% |
+| Solve composition system        |        27 |      1.29s |      0.44% |
+| Solve temperature system        |         9 |    0.0498s |         0% |
+| Free surface                    |         9 |      7.08s |       2.4% |
+| Initialization                  |         1 |      1.99s |      0.68% |
+| Postprocessing                  |         9 |      26.8s |       9.2% |
+| Setup dof systems               |         1 |      1.13s |      0.39% |
+| Setup initial conditions        |         1 |      2.43s |      0.83% |
++---------------------------------+-----------+------------+------------+
+
+*** Timestep 9:  t=44994.5 years
+   Solving mesh velocity system... 7 iterations.
+   Solving temperature system... 0 iterations.
+   Solving rigid_bottom system ... 9 iterations.
+   Solving low_friction system ... 9 iterations.
+   Solving plastic_cover system ... 9 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+7 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 0.000426992
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+4 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 2: 0.000238333
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+3 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 3: 0.000104987
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+1 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 4: 6.97994e-05
+
+
+   Postprocessing:
+     Compositions min/max/mass: -0.001343/1.034/1.45e+07 // -0.08956/1.042/1.602e+07 // -0.04191/1.09/1.499e+08
+     Temperature min/avg/max:   293 K, 293.8 K, 293 K
+     RMS, max velocity:         0.00185 m/year, 0.002 m/year
+     Writing graphical output:  output/solution/solution-00004
+
+
+
++---------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start    |       336s |            |
+|                                             |            |            |
+| Section                         | no. calls |  wall time | % of total |
++---------------------------------+-----------+------------+------------+
+| Assemble Stokes system          |        23 |      49.1s |        15% |
+| Assemble composition system     |        30 |      71.5s |        21% |
+| Assemble temperature system     |        10 |      22.5s |       6.7% |
+| Build Stokes preconditioner     |        23 |      36.3s |        11% |
+| Build composition preconditioner|        30 |         2s |       0.6% |
+| Build temperature preconditioner|        10 |     0.105s |         0% |
+| Solve Stokes system             |        23 |      81.1s |        24% |
+| Solve composition system        |        30 |      1.44s |      0.43% |
+| Solve temperature system        |        10 |    0.0552s |         0% |
+| Free surface                    |        10 |      7.83s |       2.3% |
+| Initialization                  |         1 |      1.99s |      0.59% |
+| Postprocessing                  |        10 |      32.7s |       9.7% |
+| Setup dof systems               |         1 |      1.13s |      0.34% |
+| Setup initial conditions        |         1 |      2.43s |      0.72% |
++---------------------------------+-----------+------------+------------+
+
+*** Timestep 10:  t=49994.1 years
+   Solving mesh velocity system... 7 iterations.
+   Solving temperature system... 0 iterations.
+   Solving rigid_bottom system ... 9 iterations.
+   Solving low_friction system ... 9 iterations.
+   Solving plastic_cover system ... 9 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+6 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 0.000474929
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+8 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 2: 0.000365465
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+3 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 3: 0.000210531
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+3 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 4: 9.75036e-05
+
+
+   Postprocessing:
+     Compositions min/max/mass: -0.00118/1.032/1.45e+07 // -0.08992/1.047/1.603e+07 // -0.04714/1.09/1.5e+08
+     Temperature min/avg/max:   293 K, 293.8 K, 293 K
+     RMS, max velocity:         0.00186 m/year, 0.002 m/year
+
+
+
++---------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start    |       377s |            |
+|                                             |            |            |
+| Section                         | no. calls |  wall time | % of total |
++---------------------------------+-----------+------------+------------+
+| Assemble Stokes system          |        27 |      57.6s |        15% |
+| Assemble composition system     |        33 |      78.6s |        21% |
+| Assemble temperature system     |        11 |      24.7s |       6.5% |
+| Build Stokes preconditioner     |        27 |      42.5s |        11% |
+| Build composition preconditioner|        33 |       2.2s |      0.58% |
+| Build temperature preconditioner|        11 |     0.116s |         0% |
+| Solve Stokes system             |        27 |      93.9s |        25% |
+| Solve composition system        |        33 |       1.6s |      0.42% |
+| Solve temperature system        |        11 |    0.0606s |         0% |
+| Free surface                    |        11 |      8.59s |       2.3% |
+| Initialization                  |         1 |      1.99s |      0.53% |
+| Postprocessing                  |        11 |      33.2s |       8.8% |
+| Setup dof systems               |         1 |      1.13s |       0.3% |
+| Setup initial conditions        |         1 |      2.43s |      0.64% |
++---------------------------------+-----------+------------+------------+
+
+*** Timestep 11:  t=54993.7 years
+   Solving mesh velocity system... 7 iterations.
+   Solving temperature system... 0 iterations.
+   Solving rigid_bottom system ... 9 iterations.
+   Solving low_friction system ... 9 iterations.
+   Solving plastic_cover system ... 9 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+6 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 0.000609375
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+3 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 2: 0.000154674
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+3 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 3: 9.27974e-05
+
+
+   Postprocessing:
+     Compositions min/max/mass: -0.001014/1.03/1.45e+07 // -0.08559/1.042/1.603e+07 // -0.04173/1.086/1.5e+08
+     Temperature min/avg/max:   293 K, 293.9 K, 293 K
+     RMS, max velocity:         0.00186 m/year, 0.002 m/year
+     Writing graphical output:  output/solution/solution-00005
+
+
+
++---------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start    |       416s |            |
+|                                             |            |            |
+| Section                         | no. calls |  wall time | % of total |
++---------------------------------+-----------+------------+------------+
+| Assemble Stokes system          |        30 |      64.1s |        15% |
+| Assemble composition system     |        36 |      85.7s |        21% |
+| Assemble temperature system     |        12 |      26.9s |       6.5% |
+| Build Stokes preconditioner     |        30 |      47.3s |        11% |
+| Build composition preconditioner|        36 |      2.39s |      0.58% |
+| Build temperature preconditioner|        12 |     0.126s |         0% |
+| Solve Stokes system             |        30 |       103s |        25% |
+| Solve composition system        |        36 |      1.75s |      0.42% |
+| Solve temperature system        |        12 |    0.0659s |         0% |
+| Free surface                    |        12 |      9.35s |       2.2% |
+| Initialization                  |         1 |      1.99s |      0.48% |
+| Postprocessing                  |        12 |      39.1s |       9.4% |
+| Setup dof systems               |         1 |      1.13s |      0.27% |
+| Setup initial conditions        |         1 |      2.43s |      0.58% |
++---------------------------------+-----------+------------+------------+
+
+*** Timestep 12:  t=59993.4 years
+   Solving mesh velocity system... 7 iterations.
+   Solving temperature system... 0 iterations.
+   Solving rigid_bottom system ... 9 iterations.
+   Solving low_friction system ... 9 iterations.
+   Solving plastic_cover system ... 9 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+6 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 0.000769566
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+9 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 2: 0.000207257
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+10 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 3: 0.000200354
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 4: 9.77775e-05
+
+
+   Postprocessing:
+     Compositions min/max/mass: -0.0008023/1.029/1.45e+07 // -0.07803/1.045/1.603e+07 // -0.04457/1.078/1.501e+08
+     Temperature min/avg/max:   293 K, 294 K, 293 K
+     RMS, max velocity:         0.00186 m/year, 0.002 m/year
+
+
+
++---------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start    |       467s |            |
+|                                             |            |            |
+| Section                         | no. calls |  wall time | % of total |
++---------------------------------+-----------+------------+------------+
+| Assemble Stokes system          |        34 |      72.6s |        16% |
+| Assemble composition system     |        39 |      92.9s |        20% |
+| Assemble temperature system     |        13 |      29.1s |       6.2% |
+| Build Stokes preconditioner     |        34 |      53.5s |        11% |
+| Build composition preconditioner|        39 |      2.59s |      0.55% |
+| Build temperature preconditioner|        13 |     0.136s |         0% |
+| Solve Stokes system             |        34 |       125s |        27% |
+| Solve composition system        |        39 |       1.9s |      0.41% |
+| Solve temperature system        |        13 |    0.0713s |         0% |
+| Free surface                    |        13 |      10.1s |       2.2% |
+| Initialization                  |         1 |      1.99s |      0.43% |
+| Postprocessing                  |        13 |      39.7s |       8.5% |
+| Setup dof systems               |         1 |      1.13s |      0.24% |
+| Setup initial conditions        |         1 |      2.43s |      0.52% |
++---------------------------------+-----------+------------+------------+
+
+*** Timestep 13:  t=64993 years
+   Solving mesh velocity system... 7 iterations.
+   Solving temperature system... 0 iterations.
+   Solving rigid_bottom system ... 9 iterations.
+   Solving low_friction system ... 9 iterations.
+   Solving plastic_cover system ... 8 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+6 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 0.000744112
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 2: 0.000169936
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 3: 9.10124e-05
+
+
+   Postprocessing:
+     Compositions min/max/mass: -0.0005829/1.028/1.45e+07 // -0.06622/1.042/1.603e+07 // -0.04171/1.066/1.501e+08
+     Temperature min/avg/max:   293 K, 294.1 K, 293 K
+     RMS, max velocity:         0.00186 m/year, 0.002 m/year
+     Writing graphical output:  output/solution/solution-00006
+
+
+
++---------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start    |       506s |            |
+|                                             |            |            |
+| Section                         | no. calls |  wall time | % of total |
++---------------------------------+-----------+------------+------------+
+| Assemble Stokes system          |        37 |        79s |        16% |
+| Assemble composition system     |        42 |       100s |        20% |
+| Assemble temperature system     |        14 |      31.2s |       6.2% |
+| Build Stokes preconditioner     |        37 |      58.2s |        12% |
+| Build composition preconditioner|        42 |      2.78s |      0.55% |
+| Build temperature preconditioner|        14 |     0.147s |         0% |
+| Solve Stokes system             |        37 |       135s |        27% |
+| Solve composition system        |        42 |      2.05s |      0.41% |
+| Solve temperature system        |        14 |    0.0766s |         0% |
+| Free surface                    |        14 |      10.9s |       2.1% |
+| Initialization                  |         1 |      1.99s |      0.39% |
+| Postprocessing                  |        14 |      45.7s |         9% |
+| Setup dof systems               |         1 |      1.13s |      0.22% |
+| Setup initial conditions        |         1 |      2.43s |      0.48% |
++---------------------------------+-----------+------------+------------+
+
+*** Timestep 14:  t=69992.7 years
+   Solving mesh velocity system... 7 iterations.
+   Solving temperature system... 0 iterations.
+   Solving rigid_bottom system ... 9 iterations.
+   Solving low_friction system ... 9 iterations.
+   Solving plastic_cover system ... 8 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+4 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 0.000778615
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 2: 0.000219582
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 3: 0.000110723
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 4: 9.28652e-05
+
+
+   Postprocessing:
+     Compositions min/max/mass: -0.0005976/1.028/1.45e+07 // -0.05011/1.039/1.604e+07 // -0.0394/1.05/1.502e+08
+     Temperature min/avg/max:   293 K, 294.2 K, 293 K
+     RMS, max velocity:         0.00186 m/year, 0.002 m/year
+
+
+
++---------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start    |       542s |            |
+|                                             |            |            |
+| Section                         | no. calls |  wall time | % of total |
++---------------------------------+-----------+------------+------------+
+| Assemble Stokes system          |        41 |      87.5s |        16% |
+| Assemble composition system     |        45 |       107s |        20% |
+| Assemble temperature system     |        15 |      33.4s |       6.2% |
+| Build Stokes preconditioner     |        41 |      64.5s |        12% |
+| Build composition preconditioner|        45 |      2.98s |      0.55% |
+| Build temperature preconditioner|        15 |     0.157s |         0% |
+| Solve Stokes system             |        41 |       143s |        26% |
+| Solve composition system        |        45 |       2.2s |      0.41% |
+| Solve temperature system        |        15 |    0.0819s |         0% |
+| Free surface                    |        15 |      11.6s |       2.1% |
+| Initialization                  |         1 |      1.99s |      0.37% |
+| Postprocessing                  |        15 |      46.2s |       8.5% |
+| Setup dof systems               |         1 |      1.13s |      0.21% |
+| Setup initial conditions        |         1 |      2.43s |      0.45% |
++---------------------------------+-----------+------------+------------+
+
+*** Timestep 15:  t=74992.3 years
+   Solving mesh velocity system... 7 iterations.
+   Solving temperature system... 0 iterations.
+   Solving rigid_bottom system ... 9 iterations.
+   Solving low_friction system ... 9 iterations.
+   Solving plastic_cover system ... 8 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+4 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 0.000859992
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 2: 0.000210958
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 3: 0.000118911
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 4: 9.23417e-05
+
+
+   Postprocessing:
+     Compositions min/max/mass: -0.0006131/1.028/1.45e+07 // -0.0335/1.036/1.604e+07 // -0.03563/1.033/1.502e+08
+     Temperature min/avg/max:   293 K, 294.3 K, 293 K
+     RMS, max velocity:         0.00187 m/year, 0.002 m/year
+     Writing graphical output:  output/solution/solution-00007
+
+
+
++---------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start    |       585s |            |
+|                                             |            |            |
+| Section                         | no. calls |  wall time | % of total |
++---------------------------------+-----------+------------+------------+
+| Assemble Stokes system          |        45 |      95.9s |        16% |
+| Assemble composition system     |        48 |       114s |        20% |
+| Assemble temperature system     |        16 |      35.6s |       6.1% |
+| Build Stokes preconditioner     |        45 |      70.7s |        12% |
+| Build composition preconditioner|        48 |      3.17s |      0.54% |
+| Build temperature preconditioner|        16 |     0.168s |         0% |
+| Solve Stokes system             |        45 |       153s |        26% |
+| Solve composition system        |        48 |      2.35s |       0.4% |
+| Solve temperature system        |        16 |    0.0873s |         0% |
+| Free surface                    |        16 |      12.4s |       2.1% |
+| Initialization                  |         1 |      1.99s |      0.34% |
+| Postprocessing                  |        16 |      52.2s |       8.9% |
+| Setup dof systems               |         1 |      1.13s |      0.19% |
+| Setup initial conditions        |         1 |      2.43s |      0.42% |
++---------------------------------+-----------+------------+------------+
+
+*** Timestep 16:  t=79991.8 years
+   Solving mesh velocity system... 7 iterations.
+   Solving temperature system... 0 iterations.
+   Solving rigid_bottom system ... 9 iterations.
+   Solving low_friction system ... 9 iterations.
+   Solving plastic_cover system ... 8 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+6 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 0.000995736
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 2: 0.000247321
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 3: 0.000140496
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 4: 0.000104277
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+1 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 5: 8.40255e-05
+
+
+   Postprocessing:
+     Compositions min/max/mass: -0.000629/1.027/1.45e+07 // -0.03499/1.032/1.604e+07 // -0.03168/1.035/1.503e+08
+     Temperature min/avg/max:   293 K, 294.3 K, 293 K
+     RMS, max velocity:         0.00187 m/year, 0.002 m/year
+
+
+
++---------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start    |       630s |            |
+|                                             |            |            |
+| Section                         | no. calls |  wall time | % of total |
++---------------------------------+-----------+------------+------------+
+| Assemble Stokes system          |        50 |       107s |        17% |
+| Assemble composition system     |        51 |       121s |        19% |
+| Assemble temperature system     |        17 |      37.8s |         6% |
+| Build Stokes preconditioner     |        50 |      78.5s |        12% |
+| Build composition preconditioner|        51 |      3.36s |      0.53% |
+| Build temperature preconditioner|        17 |     0.178s |         0% |
+| Solve Stokes system             |        50 |       165s |        26% |
+| Solve composition system        |        51 |       2.5s |       0.4% |
+| Solve temperature system        |        17 |    0.0927s |         0% |
+| Free surface                    |        17 |      13.2s |       2.1% |
+| Initialization                  |         1 |      1.99s |      0.32% |
+| Postprocessing                  |        17 |      52.7s |       8.4% |
+| Setup dof systems               |         1 |      1.13s |      0.18% |
+| Setup initial conditions        |         1 |      2.43s |      0.39% |
++---------------------------------+-----------+------------+------------+
+
+*** Timestep 17:  t=84991.5 years
+   Solving mesh velocity system... 7 iterations.
+   Solving temperature system... 0 iterations.
+   Solving rigid_bottom system ... 9 iterations.
+   Solving low_friction system ... 9 iterations.
+   Solving plastic_cover system ... 8 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+3 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 0.00106778
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 2: 0.000244672
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 3: 0.000136407
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 4: 9.75757e-05
+
+
+   Postprocessing:
+     Compositions min/max/mass: -0.0007805/1.027/1.45e+07 // -0.03347/1.028/1.604e+07 // -0.02813/1.033/1.503e+08
+     Temperature min/avg/max:   293 K, 294.4 K, 293 K
+     RMS, max velocity:         0.00188 m/year, 0.002 m/year
+     Writing graphical output:  output/solution/solution-00008
+
+
+
++---------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start    |       673s |            |
+|                                             |            |            |
+| Section                         | no. calls |  wall time | % of total |
++---------------------------------+-----------+------------+------------+
+| Assemble Stokes system          |        54 |       115s |        17% |
+| Assemble composition system     |        54 |       128s |        19% |
+| Assemble temperature system     |        18 |        40s |       5.9% |
+| Build Stokes preconditioner     |        54 |      84.8s |        13% |
+| Build composition preconditioner|        54 |      3.56s |      0.53% |
+| Build temperature preconditioner|        18 |     0.189s |         0% |
+| Solve Stokes system             |        54 |       175s |        26% |
+| Solve composition system        |        54 |      2.65s |      0.39% |
+| Solve temperature system        |        18 |     0.098s |         0% |
+| Free surface                    |        18 |      13.9s |       2.1% |
+| Initialization                  |         1 |      1.99s |       0.3% |
+| Postprocessing                  |        18 |      58.7s |       8.7% |
+| Setup dof systems               |         1 |      1.13s |      0.17% |
+| Setup initial conditions        |         1 |      2.43s |      0.36% |
++---------------------------------+-----------+------------+------------+
+
+*** Timestep 18:  t=89991.3 years
+   Solving mesh velocity system... 7 iterations.
+   Solving temperature system... 0 iterations.
+   Solving rigid_bottom system ... 9 iterations.
+   Solving low_friction system ... 9 iterations.
+   Solving plastic_cover system ... 9 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+3 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 0.00101132
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 2: 0.000238139
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 3: 0.000143167
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 4: 0.000104498
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 5: 8.00859e-05
+
+
+   Postprocessing:
+     Compositions min/max/mass: -0.0008968/1.027/1.45e+07 // -0.03072/1.023/1.605e+07 // -0.0232/1.031/1.504e+08
+     Temperature min/avg/max:   293 K, 294.5 K, 293 K
+     RMS, max velocity:         0.00188 m/year, 0.002 m/year
+
+
+
++---------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start    |       717s |            |
+|                                             |            |            |
+| Section                         | no. calls |  wall time | % of total |
++---------------------------------+-----------+------------+------------+
+| Assemble Stokes system          |        59 |       126s |        18% |
+| Assemble composition system     |        57 |       136s |        19% |
+| Assemble temperature system     |        19 |      42.2s |       5.9% |
+| Build Stokes preconditioner     |        59 |      92.7s |        13% |
+| Build composition preconditioner|        57 |      3.76s |      0.52% |
+| Build temperature preconditioner|        19 |     0.199s |         0% |
+| Solve Stokes system             |        59 |       187s |        26% |
+| Solve composition system        |        57 |       2.8s |      0.39% |
+| Solve temperature system        |        19 |     0.103s |         0% |
+| Free surface                    |        19 |      14.7s |         2% |
+| Initialization                  |         1 |      1.99s |      0.28% |
+| Postprocessing                  |        19 |      59.2s |       8.3% |
+| Setup dof systems               |         1 |      1.13s |      0.16% |
+| Setup initial conditions        |         1 |      2.43s |      0.34% |
++---------------------------------+-----------+------------+------------+
+
+*** Timestep 19:  t=94991 years
+   Solving mesh velocity system... 7 iterations.
+   Solving temperature system... 0 iterations.
+   Solving rigid_bottom system ... 9 iterations.
+   Solving low_friction system ... 9 iterations.
+   Solving plastic_cover system ... 8 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+4 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 0.000944188
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 2: 0.00023042
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 3: 0.000126022
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 4: 9.39294e-05
+
+
+   Postprocessing:
+     Compositions min/max/mass: -0.001002/1.027/1.45e+07 // -0.027/1.018/1.605e+07 // -0.01758/1.027/1.504e+08
+     Temperature min/avg/max:   293 K, 294.6 K, 293 K
+     RMS, max velocity:         0.00187 m/year, 0.002 m/year
+     Writing graphical output:  output/solution/solution-00009
+
+
+
++---------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start    |       762s |            |
+|                                             |            |            |
+| Section                         | no. calls |  wall time | % of total |
++---------------------------------+-----------+------------+------------+
+| Assemble Stokes system          |        63 |       134s |        18% |
+| Assemble composition system     |        60 |       143s |        19% |
+| Assemble temperature system     |        20 |      44.4s |       5.8% |
+| Build Stokes preconditioner     |        63 |      98.9s |        13% |
+| Build composition preconditioner|        60 |      3.95s |      0.52% |
+| Build temperature preconditioner|        20 |      0.21s |         0% |
+| Solve Stokes system             |        63 |       199s |        26% |
+| Solve composition system        |        60 |      2.95s |      0.39% |
+| Solve temperature system        |        20 |     0.109s |         0% |
+| Free surface                    |        20 |      15.4s |         2% |
+| Initialization                  |         1 |      1.99s |      0.26% |
+| Postprocessing                  |        20 |      65.1s |       8.5% |
+| Setup dof systems               |         1 |      1.13s |      0.15% |
+| Setup initial conditions        |         1 |      2.43s |      0.32% |
++---------------------------------+-----------+------------+------------+
+
+*** Timestep 20:  t=99990.7 years
+   Solving mesh velocity system... 7 iterations.
+   Solving temperature system... 0 iterations.
+   Solving rigid_bottom system ... 9 iterations.
+   Solving low_friction system ... 9 iterations.
+   Solving plastic_cover system ... 9 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+3 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 0.000844223
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 2: 0.000212876
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 3: 0.000122055
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 4: 8.86987e-05
+
+
+   Postprocessing:
+     Compositions min/max/mass: -0.001109/1.027/1.45e+07 // -0.02694/1.012/1.605e+07 // -0.01208/1.027/1.505e+08
+     Temperature min/avg/max:   293 K, 294.7 K, 293 K
+     RMS, max velocity:         0.00187 m/year, 0.002 m/year
+
+
+
++---------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start    |       802s |            |
+|                                             |            |            |
+| Section                         | no. calls |  wall time | % of total |
++---------------------------------+-----------+------------+------------+
+| Assemble Stokes system          |        67 |       143s |        18% |
+| Assemble composition system     |        63 |       150s |        19% |
+| Assemble temperature system     |        21 |      46.6s |       5.8% |
+| Build Stokes preconditioner     |        67 |       105s |        13% |
+| Build composition preconditioner|        63 |      4.15s |      0.52% |
+| Build temperature preconditioner|        21 |      0.22s |         0% |
+| Solve Stokes system             |        67 |       211s |        26% |
+| Solve composition system        |        63 |      3.11s |      0.39% |
+| Solve temperature system        |        21 |     0.114s |         0% |
+| Free surface                    |        21 |      16.2s |         2% |
+| Initialization                  |         1 |      1.99s |      0.25% |
+| Postprocessing                  |        21 |      65.6s |       8.2% |
+| Setup dof systems               |         1 |      1.13s |      0.14% |
+| Setup initial conditions        |         1 |      2.43s |       0.3% |
++---------------------------------+-----------+------------+------------+
+
+*** Timestep 21:  t=104990 years
+   Solving mesh velocity system... 7 iterations.
+   Solving temperature system... 0 iterations.
+   Solving rigid_bottom system ... 9 iterations.
+   Solving low_friction system ... 9 iterations.
+   Solving plastic_cover system ... 9 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+10 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 0.000820214
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+4 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 2: 0.000285128
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+4 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 3: 0.000164483
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 4: 0.000117147
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 5: 9.81705e-05
+
+
+   Postprocessing:
+     Compositions min/max/mass: -0.001218/1.027/1.45e+07 // -0.02689/1.007/1.605e+07 // -0.007326/1.027/1.505e+08
+     Temperature min/avg/max:   293 K, 294.8 K, 293 K
+     RMS, max velocity:         0.00187 m/year, 0.002 m/year
+     Writing graphical output:  output/solution/solution-00010
+
+
+
++---------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start    |       864s |            |
+|                                             |            |            |
+| Section                         | no. calls |  wall time | % of total |
++---------------------------------+-----------+------------+------------+
+| Assemble Stokes system          |        72 |       153s |        18% |
+| Assemble composition system     |        66 |       157s |        18% |
+| Assemble temperature system     |        22 |      48.7s |       5.6% |
+| Build Stokes preconditioner     |        72 |       113s |        13% |
+| Build composition preconditioner|        66 |      4.34s |       0.5% |
+| Build temperature preconditioner|        22 |      0.23s |         0% |
+| Solve Stokes system             |        72 |       235s |        27% |
+| Solve composition system        |        66 |      3.26s |      0.38% |
+| Solve temperature system        |        22 |     0.119s |         0% |
+| Free surface                    |        22 |        17s |         2% |
+| Initialization                  |         1 |      1.99s |      0.23% |
+| Postprocessing                  |        22 |      71.7s |       8.3% |
+| Setup dof systems               |         1 |      1.13s |      0.13% |
+| Setup initial conditions        |         1 |      2.43s |      0.28% |
++---------------------------------+-----------+------------+------------+
+
+*** Timestep 22:  t=109990 years
+   Solving mesh velocity system... 7 iterations.
+   Solving temperature system... 0 iterations.
+   Solving rigid_bottom system ... 9 iterations.
+   Solving low_friction system ... 9 iterations.
+   Solving plastic_cover system ... 9 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+7 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 0.000810804
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+4 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 2: 0.000290501
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+3 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 3: 0.000162555
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 4: 0.000106351
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 5: 8.04424e-05
+
+
+   Postprocessing:
+     Compositions min/max/mass: -0.001334/1.027/1.45e+07 // -0.02684/1.005/1.606e+07 // -0.004745/1.027/1.506e+08
+     Temperature min/avg/max:   293 K, 294.9 K, 293 K
+     RMS, max velocity:         0.00187 m/year, 0.002 m/year
+
+
+
++---------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start    |       917s |            |
+|                                             |            |            |
+| Section                         | no. calls |  wall time | % of total |
++---------------------------------+-----------+------------+------------+
+| Assemble Stokes system          |        77 |       164s |        18% |
+| Assemble composition system     |        69 |       164s |        18% |
+| Assemble temperature system     |        23 |      50.9s |       5.6% |
+| Build Stokes preconditioner     |        77 |       121s |        13% |
+| Build composition preconditioner|        69 |      4.54s |      0.49% |
+| Build temperature preconditioner|        23 |     0.241s |         0% |
+| Solve Stokes system             |        77 |       256s |        28% |
+| Solve composition system        |        69 |      3.41s |      0.37% |
+| Solve temperature system        |        23 |     0.125s |         0% |
+| Free surface                    |        23 |      17.7s |       1.9% |
+| Initialization                  |         1 |      1.99s |      0.22% |
+| Postprocessing                  |        23 |      72.2s |       7.9% |
+| Setup dof systems               |         1 |      1.13s |      0.12% |
+| Setup initial conditions        |         1 |      2.43s |      0.27% |
++---------------------------------+-----------+------------+------------+
+
+*** Timestep 23:  t=114990 years
+   Solving mesh velocity system... 7 iterations.
+   Solving temperature system... 0 iterations.
+   Solving rigid_bottom system ... 9 iterations.
+   Solving low_friction system ... 9 iterations.
+   Solving plastic_cover system ... 8 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+11 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 0.000763733
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+12 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 2: 0.000379017
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+6 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 3: 0.000233005
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+3 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 4: 0.000136673
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 5: 8.59841e-05
+
+
+   Postprocessing:
+     Compositions min/max/mass: -0.00144/1.027/1.45e+07 // -0.02679/1.004/1.606e+07 // -0.004435/1.027/1.506e+08
+     Temperature min/avg/max:   293 K, 294.9 K, 293 K
+     RMS, max velocity:         0.00187 m/year, 0.002 m/year
+     Writing graphical output:  output/solution/solution-00011
+
+
+
++---------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start    |       988s |            |
+|                                             |            |            |
+| Section                         | no. calls |  wall time | % of total |
++---------------------------------+-----------+------------+------------+
+| Assemble Stokes system          |        82 |       175s |        18% |
+| Assemble composition system     |        72 |       171s |        17% |
+| Assemble temperature system     |        24 |      53.1s |       5.4% |
+| Build Stokes preconditioner     |        82 |       129s |        13% |
+| Build composition preconditioner|        72 |      4.73s |      0.48% |
+| Build temperature preconditioner|        24 |     0.251s |         0% |
+| Solve Stokes system             |        82 |       290s |        29% |
+| Solve composition system        |        72 |      3.56s |      0.36% |
+| Solve temperature system        |        24 |      0.13s |         0% |
+| Free surface                    |        24 |      18.5s |       1.9% |
+| Initialization                  |         1 |      1.99s |       0.2% |
+| Postprocessing                  |        24 |      78.2s |       7.9% |
+| Setup dof systems               |         1 |      1.13s |      0.11% |
+| Setup initial conditions        |         1 |      2.43s |      0.25% |
++---------------------------------+-----------+------------+------------+
+
+*** Timestep 24:  t=119989 years
+   Solving mesh velocity system... 7 iterations.
+   Solving temperature system... 0 iterations.
+   Solving rigid_bottom system ... 9 iterations.
+   Solving low_friction system ... 9 iterations.
+   Solving plastic_cover system ... 9 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+7 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 0.000644479
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+7 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 2: 0.000320495
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+5 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 3: 0.000211727
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+5 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 4: 0.000132603
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 5: 0.000102006
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 6: 6.45337e-05
+
+
+   Postprocessing:
+     Compositions min/max/mass: -0.001542/1.027/1.45e+07 // -0.02675/1.004/1.606e+07 // -0.004089/1.027/1.507e+08
+     Temperature min/avg/max:   293 K, 295 K, 293 K
+     RMS, max velocity:         0.00187 m/year, 0.002 m/year
+
+
+
++---------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start    |  1.05e+03s |            |
+|                                             |            |            |
+| Section                         | no. calls |  wall time | % of total |
++---------------------------------+-----------+------------+------------+
+| Assemble Stokes system          |        88 |       187s |        18% |
+| Assemble composition system     |        75 |       178s |        17% |
+| Assemble temperature system     |        25 |      55.3s |       5.3% |
+| Build Stokes preconditioner     |        88 |       138s |        13% |
+| Build composition preconditioner|        75 |      4.93s |      0.47% |
+| Build temperature preconditioner|        25 |     0.262s |         0% |
+| Solve Stokes system             |        88 |       319s |        30% |
+| Solve composition system        |        75 |      3.72s |      0.35% |
+| Solve temperature system        |        25 |     0.136s |         0% |
+| Free surface                    |        25 |      19.2s |       1.8% |
+| Initialization                  |         1 |      1.99s |      0.19% |
+| Postprocessing                  |        25 |      78.7s |       7.5% |
+| Setup dof systems               |         1 |      1.13s |      0.11% |
+| Setup initial conditions        |         1 |      2.43s |      0.23% |
++---------------------------------+-----------+------------+------------+
+
+*** Timestep 25:  t=124989 years
+   Solving mesh velocity system... 7 iterations.
+   Solving temperature system... 0 iterations.
+   Solving rigid_bottom system ... 9 iterations.
+   Solving low_friction system ... 9 iterations.
+   Solving plastic_cover system ... 9 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+12 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 0.000616518
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+9 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 2: 0.000319329
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+4 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 3: 0.000190153
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 4: 0.00010682
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 5: 8.06953e-05
+
+
+   Postprocessing:
+     Compositions min/max/mass: -0.001658/1.027/1.45e+07 // -0.02671/1.004/1.606e+07 // -0.003642/1.027/1.507e+08
+     Temperature min/avg/max:   293 K, 295.1 K, 293 K
+     RMS, max velocity:         0.00187 m/year, 0.002 m/year
+     Writing graphical output:  output/solution/solution-00012
+
+
+
++---------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start    |  1.12e+03s |            |
+|                                             |            |            |
+| Section                         | no. calls |  wall time | % of total |
++---------------------------------+-----------+------------+------------+
+| Assemble Stokes system          |        93 |       198s |        18% |
+| Assemble composition system     |        78 |       185s |        17% |
+| Assemble temperature system     |        26 |      57.5s |       5.1% |
+| Build Stokes preconditioner     |        93 |       146s |        13% |
+| Build composition preconditioner|        78 |      5.12s |      0.46% |
+| Build temperature preconditioner|        26 |     0.272s |         0% |
+| Solve Stokes system             |        93 |       348s |        31% |
+| Solve composition system        |        78 |      3.87s |      0.35% |
+| Solve temperature system        |        26 |     0.141s |         0% |
+| Free surface                    |        26 |        20s |       1.8% |
+| Initialization                  |         1 |      1.99s |      0.18% |
+| Postprocessing                  |        26 |      84.8s |       7.6% |
+| Setup dof systems               |         1 |      1.13s |       0.1% |
+| Setup initial conditions        |         1 |      2.43s |      0.22% |
++---------------------------------+-----------+------------+------------+
+
+*** Timestep 26:  t=129989 years
+   Solving mesh velocity system... 7 iterations.
+   Solving temperature system... 0 iterations.
+   Solving rigid_bottom system ... 9 iterations.
+   Solving low_friction system ... 9 iterations.
+   Solving plastic_cover system ... 9 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+10 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 0.000616576
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+10 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 2: 0.000316791
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+8 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 3: 0.000215258
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+4 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 4: 0.00014819
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 5: 8.18358e-05
+
+
+   Postprocessing:
+     Compositions min/max/mass: -0.001773/1.027/1.45e+07 // -0.02667/1.003/1.607e+07 // -0.003401/1.027/1.508e+08
+     Temperature min/avg/max:   293 K, 295.2 K, 293 K
+     RMS, max velocity:         0.00187 m/year, 0.002 m/year
+
+
+
++---------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start    |  1.18e+03s |            |
+|                                             |            |            |
+| Section                         | no. calls |  wall time | % of total |
++---------------------------------+-----------+------------+------------+
+| Assemble Stokes system          |        98 |       209s |        18% |
+| Assemble composition system     |        81 |       192s |        16% |
+| Assemble temperature system     |        27 |      59.7s |         5% |
+| Build Stokes preconditioner     |        98 |       154s |        13% |
+| Build composition preconditioner|        81 |      5.32s |      0.45% |
+| Build temperature preconditioner|        27 |     0.283s |         0% |
+| Solve Stokes system             |        98 |       382s |        32% |
+| Solve composition system        |        81 |      4.02s |      0.34% |
+| Solve temperature system        |        27 |     0.147s |         0% |
+| Free surface                    |        27 |      20.8s |       1.8% |
+| Initialization                  |         1 |      1.99s |      0.17% |
+| Postprocessing                  |        27 |      85.3s |       7.2% |
+| Setup dof systems               |         1 |      1.13s |         0% |
+| Setup initial conditions        |         1 |      2.43s |      0.21% |
++---------------------------------+-----------+------------+------------+
+
+*** Timestep 27:  t=134988 years
+   Solving mesh velocity system... 7 iterations.
+   Solving temperature system... 0 iterations.
+   Solving rigid_bottom system ... 9 iterations.
+   Solving low_friction system ... 9 iterations.
+   Solving plastic_cover system ... 9 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+10 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 0.000624609
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+4 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 2: 0.000224495
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 3: 0.000130227
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 4: 8.92359e-05
+
+
+   Postprocessing:
+     Compositions min/max/mass: -0.001892/1.027/1.45e+07 // -0.02664/1.003/1.607e+07 // -0.003225/1.027/1.508e+08
+     Temperature min/avg/max:   293 K, 295.3 K, 293 K
+     RMS, max velocity:         0.00187 m/year, 0.002 m/year
+     Writing graphical output:  output/solution/solution-00013
+
+
+
++---------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start    |  1.24e+03s |            |
+|                                             |            |            |
+| Section                         | no. calls |  wall time | % of total |
++---------------------------------+-----------+------------+------------+
+| Assemble Stokes system          |       102 |       217s |        18% |
+| Assemble composition system     |        84 |       200s |        16% |
+| Assemble temperature system     |        28 |      61.9s |         5% |
+| Build Stokes preconditioner     |       102 |       160s |        13% |
+| Build composition preconditioner|        84 |      5.51s |      0.45% |
+| Build temperature preconditioner|        28 |     0.293s |         0% |
+| Solve Stokes system             |       102 |       400s |        32% |
+| Solve composition system        |        84 |      4.18s |      0.34% |
+| Solve temperature system        |        28 |     0.152s |         0% |
+| Free surface                    |        28 |      21.5s |       1.7% |
+| Initialization                  |         1 |      1.99s |      0.16% |
+| Postprocessing                  |        28 |      91.3s |       7.4% |
+| Setup dof systems               |         1 |      1.13s |         0% |
+| Setup initial conditions        |         1 |      2.43s |       0.2% |
++---------------------------------+-----------+------------+------------+
+
+*** Timestep 28:  t=139988 years
+   Solving mesh velocity system... 7 iterations.
+   Solving temperature system... 0 iterations.
+   Solving rigid_bottom system ... 9 iterations.
+   Solving low_friction system ... 9 iterations.
+   Solving plastic_cover system ... 9 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+6 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 0.000640256
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+5 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 2: 0.000251996
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 3: 0.000145682
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 4: 9.22112e-05
+
+
+   Postprocessing:
+     Compositions min/max/mass: -0.002/1.027/1.45e+07 // -0.02662/1.003/1.607e+07 // -0.003097/1.027/1.509e+08
+     Temperature min/avg/max:   293 K, 295.4 K, 293 K
+     RMS, max velocity:         0.00187 m/year, 0.002 m/year
+
+
+
++---------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start    |  1.28e+03s |            |
+|                                             |            |            |
+| Section                         | no. calls |  wall time | % of total |
++---------------------------------+-----------+------------+------------+
+| Assemble Stokes system          |       106 |       226s |        18% |
+| Assemble composition system     |        87 |       207s |        16% |
+| Assemble temperature system     |        29 |        64s |         5% |
+| Build Stokes preconditioner     |       106 |       167s |        13% |
+| Build composition preconditioner|        87 |       5.7s |      0.45% |
+| Build temperature preconditioner|        29 |     0.304s |         0% |
+| Solve Stokes system             |       106 |       415s |        32% |
+| Solve composition system        |        87 |      4.33s |      0.34% |
+| Solve temperature system        |        29 |     0.157s |         0% |
+| Free surface                    |        29 |      22.3s |       1.7% |
+| Initialization                  |         1 |      1.99s |      0.16% |
+| Postprocessing                  |        29 |      91.9s |       7.2% |
+| Setup dof systems               |         1 |      1.13s |         0% |
+| Setup initial conditions        |         1 |      2.43s |      0.19% |
++---------------------------------+-----------+------------+------------+
+
+*** Timestep 29:  t=144988 years
+   Solving mesh velocity system... 7 iterations.
+   Solving temperature system... 0 iterations.
+   Solving rigid_bottom system ... 9 iterations.
+   Solving low_friction system ... 9 iterations.
+   Solving plastic_cover system ... 9 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+8 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 0.000682067
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+5 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 2: 0.000269039
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 3: 0.000145088
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 4: 9.11247e-05
+
+
+   Postprocessing:
+     Compositions min/max/mass: -0.002114/1.027/1.45e+07 // -0.02661/1.003/1.607e+07 // -0.002952/1.027/1.509e+08
+     Temperature min/avg/max:   293 K, 295.4 K, 293 K
+     RMS, max velocity:         0.00187 m/year, 0.002 m/year
+     Writing graphical output:  output/solution/solution-00014
+
+
+
++---------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start    |  1.33e+03s |            |
+|                                             |            |            |
+| Section                         | no. calls |  wall time | % of total |
++---------------------------------+-----------+------------+------------+
+| Assemble Stokes system          |       110 |       235s |        18% |
+| Assemble composition system     |        90 |       214s |        16% |
+| Assemble temperature system     |        30 |      66.6s |         5% |
+| Build Stokes preconditioner     |       110 |       173s |        13% |
+| Build composition preconditioner|        90 |      5.92s |      0.44% |
+| Build temperature preconditioner|        30 |     0.315s |         0% |
+| Solve Stokes system             |       110 |       433s |        32% |
+| Solve composition system        |        90 |      4.49s |      0.34% |
+| Solve temperature system        |        30 |     0.163s |         0% |
+| Free surface                    |        30 |      23.1s |       1.7% |
+| Initialization                  |         1 |      1.99s |      0.15% |
+| Postprocessing                  |        30 |      97.9s |       7.3% |
+| Setup dof systems               |         1 |      1.13s |         0% |
+| Setup initial conditions        |         1 |      2.43s |      0.18% |
++---------------------------------+-----------+------------+------------+
+
+*** Timestep 30:  t=149988 years
+   Solving mesh velocity system... 7 iterations.
+   Solving temperature system... 0 iterations.
+   Solving rigid_bottom system ... 9 iterations.
+   Solving low_friction system ... 9 iterations.
+   Solving plastic_cover system ... 9 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+9 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 0.000642906
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+7 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 2: 0.000278425
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+3 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 3: 0.00017894
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 4: 9.5027e-05
+
+
+   Postprocessing:
+     Compositions min/max/mass: -0.002219/1.027/1.45e+07 // -0.0266/1.003/1.608e+07 // -0.002833/1.027/1.51e+08
+     Temperature min/avg/max:   293 K, 295.5 K, 293 K
+     RMS, max velocity:         0.00187 m/year, 0.002 m/year
+
+
+
++---------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start    |  1.38e+03s |            |
+|                                             |            |            |
+| Section                         | no. calls |  wall time | % of total |
++---------------------------------+-----------+------------+------------+
+| Assemble Stokes system          |       114 |       244s |        18% |
+| Assemble composition system     |        93 |       221s |        16% |
+| Assemble temperature system     |        31 |      68.7s |         5% |
+| Build Stokes preconditioner     |       114 |       179s |        13% |
+| Build composition preconditioner|        93 |      6.12s |      0.44% |
+| Build temperature preconditioner|        31 |     0.325s |         0% |
+| Solve Stokes system             |       114 |       454s |        33% |
+| Solve composition system        |        93 |      4.65s |      0.34% |
+| Solve temperature system        |        31 |     0.168s |         0% |
+| Free surface                    |        31 |        24s |       1.7% |
+| Initialization                  |         1 |      1.99s |      0.14% |
+| Postprocessing                  |        31 |      98.4s |       7.1% |
+| Setup dof systems               |         1 |      1.13s |         0% |
+| Setup initial conditions        |         1 |      2.43s |      0.18% |
++---------------------------------+-----------+------------+------------+
+
+*** Timestep 31:  t=154987 years
+   Solving mesh velocity system... 7 iterations.
+   Solving temperature system... 0 iterations.
+   Solving rigid_bottom system ... 9 iterations.
+   Solving low_friction system ... 9 iterations.
+   Solving plastic_cover system ... 9 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+6 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 0.00054648
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+4 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 2: 0.000208723
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 3: 0.000120922
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 4: 7.94896e-05
+
+
+   Postprocessing:
+     Compositions min/max/mass: -0.002318/1.027/1.45e+07 // -0.02659/1.003/1.608e+07 // -0.00273/1.027/1.51e+08
+     Temperature min/avg/max:   293 K, 295.6 K, 293 K
+     RMS, max velocity:         0.00187 m/year, 0.002 m/year
+     Writing graphical output:  output/solution/solution-00015
+
+
+
++---------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start    |  1.43e+03s |            |
+|                                             |            |            |
+| Section                         | no. calls |  wall time | % of total |
++---------------------------------+-----------+------------+------------+
+| Assemble Stokes system          |       118 |       252s |        18% |
+| Assemble composition system     |        96 |       228s |        16% |
+| Assemble temperature system     |        32 |      70.9s |         5% |
+| Build Stokes preconditioner     |       118 |       186s |        13% |
+| Build composition preconditioner|        96 |      6.31s |      0.44% |
+| Build temperature preconditioner|        32 |     0.336s |         0% |
+| Solve Stokes system             |       118 |       469s |        33% |
+| Solve composition system        |        96 |       4.8s |      0.34% |
+| Solve temperature system        |        32 |     0.173s |         0% |
+| Free surface                    |        32 |      24.7s |       1.7% |
+| Initialization                  |         1 |      1.99s |      0.14% |
+| Postprocessing                  |        32 |       104s |       7.3% |
+| Setup dof systems               |         1 |      1.13s |         0% |
+| Setup initial conditions        |         1 |      2.43s |      0.17% |
++---------------------------------+-----------+------------+------------+
+
+*** Timestep 32:  t=159987 years
+   Solving mesh velocity system... 7 iterations.
+   Solving temperature system... 0 iterations.
+   Solving rigid_bottom system ... 9 iterations.
+   Solving low_friction system ... 9 iterations.
+   Solving plastic_cover system ... 9 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+7 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 0.000606667
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+6 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 2: 0.000235452
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+3 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 3: 0.000170709
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 4: 8.9707e-05
+
+
+   Postprocessing:
+     Compositions min/max/mass: -0.002409/1.027/1.45e+07 // -0.02659/1.003/1.608e+07 // -0.002668/1.027/1.511e+08
+     Temperature min/avg/max:   293 K, 295.7 K, 293 K
+     RMS, max velocity:         0.00187 m/year, 0.002 m/year
+
+
+
++---------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start    |  1.48e+03s |            |
+|                                             |            |            |
+| Section                         | no. calls |  wall time | % of total |
++---------------------------------+-----------+------------+------------+
+| Assemble Stokes system          |       122 |       261s |        18% |
+| Assemble composition system     |        99 |       235s |        16% |
+| Assemble temperature system     |        33 |      73.1s |       4.9% |
+| Build Stokes preconditioner     |       122 |       192s |        13% |
+| Build composition preconditioner|        99 |       6.5s |      0.44% |
+| Build temperature preconditioner|        33 |     0.346s |         0% |
+| Solve Stokes system             |       122 |       490s |        33% |
+| Solve composition system        |        99 |      4.96s |      0.33% |
+| Solve temperature system        |        33 |     0.179s |         0% |
+| Free surface                    |        33 |      25.5s |       1.7% |
+| Initialization                  |         1 |      1.99s |      0.13% |
+| Postprocessing                  |        33 |       105s |       7.1% |
+| Setup dof systems               |         1 |      1.13s |         0% |
+| Setup initial conditions        |         1 |      2.43s |      0.16% |
++---------------------------------+-----------+------------+------------+
+
+*** Timestep 33:  t=164987 years
+   Solving mesh velocity system... 7 iterations.
+   Solving temperature system... 0 iterations.
+   Solving rigid_bottom system ... 9 iterations.
+   Solving low_friction system ... 9 iterations.
+   Solving plastic_cover system ... 8 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+7 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 0.00056169
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+6 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 2: 0.000224411
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+3 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 3: 0.000145021
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 4: 8.44446e-05
+
+
+   Postprocessing:
+     Compositions min/max/mass: -0.0025/1.027/1.45e+07 // -0.0266/1.003/1.609e+07 // -0.002536/1.027/1.511e+08
+     Temperature min/avg/max:   293 K, 295.8 K, 293 K
+     RMS, max velocity:         0.00187 m/year, 0.002 m/year
+     Writing graphical output:  output/solution/solution-00016
+
+
+
++---------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start    |  1.53e+03s |            |
+|                                             |            |            |
+| Section                         | no. calls |  wall time | % of total |
++---------------------------------+-----------+------------+------------+
+| Assemble Stokes system          |       126 |       269s |        18% |
+| Assemble composition system     |       102 |       243s |        16% |
+| Assemble temperature system     |        34 |      75.3s |       4.9% |
+| Build Stokes preconditioner     |       126 |       198s |        13% |
+| Build composition preconditioner|       102 |       6.7s |      0.44% |
+| Build temperature preconditioner|        34 |     0.357s |         0% |
+| Solve Stokes system             |       126 |       511s |        33% |
+| Solve composition system        |       102 |      5.11s |      0.33% |
+| Solve temperature system        |        34 |     0.184s |         0% |
+| Free surface                    |        34 |      26.2s |       1.7% |
+| Initialization                  |         1 |      1.99s |      0.13% |
+| Postprocessing                  |        34 |       111s |       7.2% |
+| Setup dof systems               |         1 |      1.13s |         0% |
+| Setup initial conditions        |         1 |      2.43s |      0.16% |
++---------------------------------+-----------+------------+------------+
+
+*** Timestep 34:  t=169987 years
+   Solving mesh velocity system... 7 iterations.
+   Solving temperature system... 0 iterations.
+   Solving rigid_bottom system ... 9 iterations.
+   Solving low_friction system ... 9 iterations.
+   Solving plastic_cover system ... 8 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+7 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 0.000502172
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+6 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 2: 0.000237472
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+3 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 3: 0.000154026
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 4: 8.82299e-05
+
+
+   Postprocessing:
+     Compositions min/max/mass: -0.002581/1.027/1.45e+07 // -0.0266/1.003/1.609e+07 // -0.002619/1.027/1.512e+08
+     Temperature min/avg/max:   293 K, 295.9 K, 293 K
+     RMS, max velocity:         0.00187 m/year, 0.002 m/year
+
+
+
++---------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start    |  1.58e+03s |            |
+|                                             |            |            |
+| Section                         | no. calls |  wall time | % of total |
++---------------------------------+-----------+------------+------------+
+| Assemble Stokes system          |       130 |       278s |        18% |
+| Assemble composition system     |       105 |       250s |        16% |
+| Assemble temperature system     |        35 |      77.5s |       4.9% |
+| Build Stokes preconditioner     |       130 |       204s |        13% |
+| Build composition preconditioner|       105 |      6.89s |      0.44% |
+| Build temperature preconditioner|        35 |     0.367s |         0% |
+| Solve Stokes system             |       130 |       532s |        34% |
+| Solve composition system        |       105 |      5.26s |      0.33% |
+| Solve temperature system        |        35 |     0.189s |         0% |
+| Free surface                    |        35 |        27s |       1.7% |
+| Initialization                  |         1 |      1.99s |      0.13% |
+| Postprocessing                  |        35 |       111s |         7% |
+| Setup dof systems               |         1 |      1.13s |         0% |
+| Setup initial conditions        |         1 |      2.43s |      0.15% |
++---------------------------------+-----------+------------+------------+
+
+*** Timestep 35:  t=174986 years
+   Solving mesh velocity system... 7 iterations.
+   Solving temperature system... 0 iterations.
+   Solving rigid_bottom system ... 9 iterations.
+   Solving low_friction system ... 9 iterations.
+   Solving plastic_cover system ... 9 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+9 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 0.000550592
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+10 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 2: 0.000331039
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+9 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 3: 0.000230614
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+5 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 4: 0.000153832
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 5: 9.0821e-05
+
+
+   Postprocessing:
+     Compositions min/max/mass: -0.00265/1.027/1.45e+07 // -0.0266/1.003/1.609e+07 // -0.002722/1.027/1.512e+08
+     Temperature min/avg/max:   293 K, 296 K, 293 K
+     RMS, max velocity:         0.00187 m/year, 0.002 m/year
+     Writing graphical output:  output/solution/solution-00017
+
+
+
++---------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start    |  1.66e+03s |            |
+|                                             |            |            |
+| Section                         | no. calls |  wall time | % of total |
++---------------------------------+-----------+------------+------------+
+| Assemble Stokes system          |       135 |       288s |        17% |
+| Assemble composition system     |       108 |       257s |        15% |
+| Assemble temperature system     |        36 |      79.7s |       4.8% |
+| Build Stokes preconditioner     |       135 |       212s |        13% |
+| Build composition preconditioner|       108 |      7.09s |      0.43% |
+| Build temperature preconditioner|        36 |     0.378s |         0% |
+| Solve Stokes system             |       135 |       572s |        34% |
+| Solve composition system        |       108 |      5.41s |      0.33% |
+| Solve temperature system        |        36 |     0.195s |         0% |
+| Free surface                    |        36 |      27.8s |       1.7% |
+| Initialization                  |         1 |      1.99s |      0.12% |
+| Postprocessing                  |        36 |       117s |       7.1% |
+| Setup dof systems               |         1 |      1.13s |         0% |
+| Setup initial conditions        |         1 |      2.43s |      0.15% |
++---------------------------------+-----------+------------+------------+
+
+*** Timestep 36:  t=179986 years
+   Solving mesh velocity system... 7 iterations.
+   Solving temperature system... 0 iterations.
+   Solving rigid_bottom system ... 9 iterations.
+   Solving low_friction system ... 9 iterations.
+   Solving plastic_cover system ... 9 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+12 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 0.000466352
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+5 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 2: 0.00024372
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+3 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 3: 0.00013491
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 4: 8.7708e-05
+
+
+   Postprocessing:
+     Compositions min/max/mass: -0.002702/1.027/1.45e+07 // -0.0266/1.003/1.609e+07 // -0.002852/1.027/1.513e+08
+     Temperature min/avg/max:   293 K, 296 K, 293 K
+     RMS, max velocity:         0.00187 m/year, 0.002 m/year
+
+
+
++---------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start    |  1.71e+03s |            |
+|                                             |            |            |
+| Section                         | no. calls |  wall time | % of total |
++---------------------------------+-----------+------------+------------+
+| Assemble Stokes system          |       139 |       297s |        17% |
+| Assemble composition system     |       111 |       264s |        15% |
+| Assemble temperature system     |        37 |      81.9s |       4.8% |
+| Build Stokes preconditioner     |       139 |       218s |        13% |
+| Build composition preconditioner|       111 |      7.28s |      0.42% |
+| Build temperature preconditioner|        37 |     0.388s |         0% |
+| Solve Stokes system             |       139 |       596s |        35% |
+| Solve composition system        |       111 |      5.56s |      0.32% |
+| Solve temperature system        |        37 |       0.2s |         0% |
+| Free surface                    |        37 |      28.5s |       1.7% |
+| Initialization                  |         1 |      1.99s |      0.12% |
+| Postprocessing                  |        37 |       118s |       6.9% |
+| Setup dof systems               |         1 |      1.13s |         0% |
+| Setup initial conditions        |         1 |      2.43s |      0.14% |
++---------------------------------+-----------+------------+------------+
+
+*** Timestep 37:  t=184986 years
+   Solving mesh velocity system... 7 iterations.
+   Solving temperature system... 0 iterations.
+   Solving rigid_bottom system ... 9 iterations.
+   Solving low_friction system ... 9 iterations.
+   Solving plastic_cover system ... 9 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+8 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 0.000478487
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+4 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 2: 0.0002235
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 3: 0.000126403
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+3 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 4: 9.2072e-05
+
+
+   Postprocessing:
+     Compositions min/max/mass: -0.002738/1.027/1.45e+07 // -0.0266/1.003/1.61e+07 // -0.002977/1.027/1.513e+08
+     Temperature min/avg/max:   293 K, 296.1 K, 293 K
+     RMS, max velocity:         0.00187 m/year, 0.002 m/year
+     Writing graphical output:  output/solution/solution-00018
+
+
+
++---------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start    |  1.77e+03s |            |
+|                                             |            |            |
+| Section                         | no. calls |  wall time | % of total |
++---------------------------------+-----------+------------+------------+
+| Assemble Stokes system          |       143 |       305s |        17% |
+| Assemble composition system     |       114 |       271s |        15% |
+| Assemble temperature system     |        38 |        84s |       4.8% |
+| Build Stokes preconditioner     |       143 |       225s |        13% |
+| Build composition preconditioner|       114 |      7.47s |      0.42% |
+| Build temperature preconditioner|        38 |     0.399s |         0% |
+| Solve Stokes system             |       143 |       615s |        35% |
+| Solve composition system        |       114 |      5.72s |      0.32% |
+| Solve temperature system        |        38 |     0.206s |         0% |
+| Free surface                    |        38 |      29.3s |       1.7% |
+| Initialization                  |         1 |      1.99s |      0.11% |
+| Postprocessing                  |        38 |       124s |         7% |
+| Setup dof systems               |         1 |      1.13s |         0% |
+| Setup initial conditions        |         1 |      2.43s |      0.14% |
++---------------------------------+-----------+------------+------------+
+
+*** Timestep 38:  t=189985 years
+   Solving mesh velocity system... 7 iterations.
+   Solving temperature system... 0 iterations.
+   Solving rigid_bottom system ... 9 iterations.
+   Solving low_friction system ... 9 iterations.
+   Solving plastic_cover system ... 9 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+6 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 0.000532881
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+6 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 2: 0.000233273
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+3 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 3: 0.000136183
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 4: 9.00069e-05
+
+
+   Postprocessing:
+     Compositions min/max/mass: -0.002759/1.027/1.45e+07 // -0.0266/1.003/1.61e+07 // -0.003086/1.027/1.514e+08
+     Temperature min/avg/max:   293 K, 296.2 K, 293 K
+     RMS, max velocity:         0.00187 m/year, 0.002 m/year
+
+
+
++---------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start    |  1.81e+03s |            |
+|                                             |            |            |
+| Section                         | no. calls |  wall time | % of total |
++---------------------------------+-----------+------------+------------+
+| Assemble Stokes system          |       147 |       314s |        17% |
+| Assemble composition system     |       117 |       278s |        15% |
+| Assemble temperature system     |        39 |      86.2s |       4.8% |
+| Build Stokes preconditioner     |       147 |       231s |        13% |
+| Build composition preconditioner|       117 |      7.67s |      0.42% |
+| Build temperature preconditioner|        39 |     0.409s |         0% |
+| Solve Stokes system             |       147 |       634s |        35% |
+| Solve composition system        |       117 |      5.87s |      0.32% |
+| Solve temperature system        |        39 |     0.211s |         0% |
+| Free surface                    |        39 |        30s |       1.7% |
+| Initialization                  |         1 |      1.99s |      0.11% |
+| Postprocessing                  |        39 |       124s |       6.9% |
+| Setup dof systems               |         1 |      1.13s |         0% |
+| Setup initial conditions        |         1 |      2.43s |      0.13% |
++---------------------------------+-----------+------------+------------+
+
+*** Timestep 39:  t=194985 years
+   Solving mesh velocity system... 7 iterations.
+   Solving temperature system... 0 iterations.
+   Solving rigid_bottom system ... 9 iterations.
+   Solving low_friction system ... 9 iterations.
+   Solving plastic_cover system ... 9 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+7 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 0.000600121
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+6 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 2: 0.000254543
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+4 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 3: 0.000155396
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 4: 9.95253e-05
+
+
+   Postprocessing:
+     Compositions min/max/mass: -0.002765/1.027/1.45e+07 // -0.02659/1.003/1.61e+07 // -0.003163/1.027/1.514e+08
+     Temperature min/avg/max:   293 K, 296.3 K, 293 K
+     RMS, max velocity:         0.00187 m/year, 0.002 m/year
+     Writing graphical output:  output/solution/solution-00019
+
+
+
++---------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start    |  1.87e+03s |            |
+|                                             |            |            |
+| Section                         | no. calls |  wall time | % of total |
++---------------------------------+-----------+------------+------------+
+| Assemble Stokes system          |       151 |       322s |        17% |
+| Assemble composition system     |       120 |       285s |        15% |
+| Assemble temperature system     |        40 |      88.4s |       4.7% |
+| Build Stokes preconditioner     |       151 |       237s |        13% |
+| Build composition preconditioner|       120 |      7.86s |      0.42% |
+| Build temperature preconditioner|        40 |     0.419s |         0% |
+| Solve Stokes system             |       151 |       657s |        35% |
+| Solve composition system        |       120 |      6.02s |      0.32% |
+| Solve temperature system        |        40 |     0.216s |         0% |
+| Free surface                    |        40 |      30.8s |       1.6% |
+| Initialization                  |         1 |      1.99s |      0.11% |
+| Postprocessing                  |        40 |       130s |         7% |
+| Setup dof systems               |         1 |      1.13s |         0% |
+| Setup initial conditions        |         1 |      2.43s |      0.13% |
++---------------------------------+-----------+------------+------------+
+
+*** Timestep 40:  t=199985 years
+   Solving mesh velocity system... 7 iterations.
+   Solving temperature system... 0 iterations.
+   Solving rigid_bottom system ... 9 iterations.
+   Solving low_friction system ... 9 iterations.
+   Solving plastic_cover system ... 9 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+25 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 0.000558056
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+8 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 2: 0.000303064
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+4 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 3: 0.000159203
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 4: 9.57789e-05
+
+
+   Postprocessing:
+     Compositions min/max/mass: -0.002769/1.027/1.45e+07 // -0.02659/1.003/1.61e+07 // -0.003182/1.027/1.515e+08
+     Temperature min/avg/max:   293 K, 296.4 K, 293 K
+     RMS, max velocity:         0.00187 m/year, 0.002 m/year
+
+
+
++---------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start    |  1.93e+03s |            |
+|                                             |            |            |
+| Section                         | no. calls |  wall time | % of total |
++---------------------------------+-----------+------------+------------+
+| Assemble Stokes system          |       155 |       330s |        17% |
+| Assemble composition system     |       123 |       292s |        15% |
+| Assemble temperature system     |        41 |      90.6s |       4.7% |
+| Build Stokes preconditioner     |       155 |       244s |        13% |
+| Build composition preconditioner|       123 |      8.06s |      0.42% |
+| Build temperature preconditioner|        41 |      0.43s |         0% |
+| Solve Stokes system             |       155 |       694s |        36% |
+| Solve composition system        |       123 |      6.18s |      0.32% |
+| Solve temperature system        |        41 |     0.222s |         0% |
+| Free surface                    |        41 |      31.5s |       1.6% |
+| Initialization                  |         1 |      1.99s |       0.1% |
+| Postprocessing                  |        41 |       131s |       6.8% |
+| Setup dof systems               |         1 |      1.13s |         0% |
+| Setup initial conditions        |         1 |      2.43s |      0.13% |
++---------------------------------+-----------+------------+------------+
+
+*** Timestep 41:  t=204984 years
+   Solving mesh velocity system... 7 iterations.
+   Solving temperature system... 0 iterations.
+   Solving rigid_bottom system ... 8 iterations.
+   Solving low_friction system ... 9 iterations.
+   Solving plastic_cover system ... 8 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+17 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 0.000546214
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+9 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 2: 0.000272192
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+5 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 3: 0.000148847
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 4: 9.70833e-05
+
+
+   Postprocessing:
+     Compositions min/max/mass: -0.002795/1.027/1.45e+07 // -0.02658/1.003/1.611e+07 // -0.003149/1.027/1.515e+08
+     Temperature min/avg/max:   293 K, 296.5 K, 293 K
+     RMS, max velocity:         0.00187 m/year, 0.002 m/year
+     Writing graphical output:  output/solution/solution-00020
+
+
+
++---------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start    |     2e+03s |            |
+|                                             |            |            |
+| Section                         | no. calls |  wall time | % of total |
++---------------------------------+-----------+------------+------------+
+| Assemble Stokes system          |       159 |       339s |        17% |
+| Assemble composition system     |       126 |       299s |        15% |
+| Assemble temperature system     |        42 |      92.8s |       4.6% |
+| Build Stokes preconditioner     |       159 |       250s |        12% |
+| Build composition preconditioner|       126 |      8.26s |      0.41% |
+| Build temperature preconditioner|        42 |      0.44s |         0% |
+| Solve Stokes system             |       159 |       727s |        36% |
+| Solve composition system        |       126 |      6.32s |      0.32% |
+| Solve temperature system        |        42 |     0.227s |         0% |
+| Free surface                    |        42 |      32.3s |       1.6% |
+| Initialization                  |         1 |      1.99s |         0% |
+| Postprocessing                  |        42 |       137s |       6.8% |
+| Setup dof systems               |         1 |      1.13s |         0% |
+| Setup initial conditions        |         1 |      2.43s |      0.12% |
++---------------------------------+-----------+------------+------------+
+
+*** Timestep 42:  t=209983 years
+   Solving mesh velocity system... 7 iterations.
+   Solving temperature system... 0 iterations.
+   Solving rigid_bottom system ... 9 iterations.
+   Solving low_friction system ... 9 iterations.
+   Solving plastic_cover system ... 9 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+27 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 0.000551395
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+5 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 2: 0.000256535
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 3: 0.000142315
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 4: 0.000107202
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 5: 7.58775e-05
+
+
+   Postprocessing:
+     Compositions min/max/mass: -0.002821/1.027/1.45e+07 // -0.02658/1.003/1.611e+07 // -0.003099/1.027/1.516e+08
+     Temperature min/avg/max:   293 K, 296.6 K, 293 K
+     RMS, max velocity:         0.00187 m/year, 0.002 m/year
+
+
+
++---------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start    |  2.07e+03s |            |
+|                                             |            |            |
+| Section                         | no. calls |  wall time | % of total |
++---------------------------------+-----------+------------+------------+
+| Assemble Stokes system          |       164 |       349s |        17% |
+| Assemble composition system     |       129 |       307s |        15% |
+| Assemble temperature system     |        43 |      94.9s |       4.6% |
+| Build Stokes preconditioner     |       164 |       258s |        12% |
+| Build composition preconditioner|       129 |      8.45s |      0.41% |
+| Build temperature preconditioner|        43 |     0.451s |         0% |
+| Solve Stokes system             |       164 |       766s |        37% |
+| Solve composition system        |       129 |      6.47s |      0.31% |
+| Solve temperature system        |        43 |     0.233s |         0% |
+| Free surface                    |        43 |      33.1s |       1.6% |
+| Initialization                  |         1 |      1.99s |         0% |
+| Postprocessing                  |        43 |       137s |       6.6% |
+| Setup dof systems               |         1 |      1.13s |         0% |
+| Setup initial conditions        |         1 |      2.43s |      0.12% |
++---------------------------------+-----------+------------+------------+
+
+*** Timestep 43:  t=214982 years
+   Solving mesh velocity system... 7 iterations.
+   Solving temperature system... 0 iterations.
+   Solving rigid_bottom system ... 9 iterations.
+   Solving low_friction system ... 9 iterations.
+   Solving plastic_cover system ... 9 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+11 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 0.000563137
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+34 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 2: 0.000372338
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+6 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 3: 0.000273507
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+6 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 4: 0.000150916
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+6 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 5: 0.000103117
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+8 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 6: 9.85777e-05
+
+
+   Postprocessing:
+     Compositions min/max/mass: -0.002834/1.027/1.45e+07 // -0.02657/1.003/1.611e+07 // -0.003146/1.027/1.516e+08
+     Temperature min/avg/max:   293 K, 296.6 K, 293 K
+     RMS, max velocity:         0.00187 m/year, 0.00202 m/year
+     Writing graphical output:  output/solution/solution-00021
+
+
+
++---------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start    |  2.19e+03s |            |
+|                                             |            |            |
+| Section                         | no. calls |  wall time | % of total |
++---------------------------------+-----------+------------+------------+
+| Assemble Stokes system          |       170 |       362s |        17% |
+| Assemble composition system     |       132 |       314s |        14% |
+| Assemble temperature system     |        44 |      97.1s |       4.4% |
+| Build Stokes preconditioner     |       170 |       267s |        12% |
+| Build composition preconditioner|       132 |      8.65s |       0.4% |
+| Build temperature preconditioner|        44 |     0.461s |         0% |
+| Solve Stokes system             |       170 |       840s |        38% |
+| Solve composition system        |       132 |      6.63s |       0.3% |
+| Solve temperature system        |        44 |     0.238s |         0% |
+| Free surface                    |        44 |      33.8s |       1.5% |
+| Initialization                  |         1 |      1.99s |         0% |
+| Postprocessing                  |        44 |       143s |       6.6% |
+| Setup dof systems               |         1 |      1.13s |         0% |
+| Setup initial conditions        |         1 |      2.43s |      0.11% |
++---------------------------------+-----------+------------+------------+
+
+*** Timestep 44:  t=219841 years
+   Solving mesh velocity system... 7 iterations.
+   Solving temperature system... 0 iterations.
+   Solving rigid_bottom system ... 9 iterations.
+   Solving low_friction system ... 9 iterations.
+   Solving plastic_cover system ... 9 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+33 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 0.000561053
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+9 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 2: 0.000191629
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+13 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 3: 0.000112454
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 4: 0.000127127
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+1 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 5: 7.97229e-05
+
+
+   Postprocessing:
+     Compositions min/max/mass: -0.002861/1.027/1.45e+07 // -0.02657/1.003/1.611e+07 // -0.003169/1.027/1.517e+08
+     Temperature min/avg/max:   293 K, 296.7 K, 293 K
+     RMS, max velocity:         0.00187 m/year, 0.002 m/year
+
+
+
++---------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start    |  2.27e+03s |            |
+|                                             |            |            |
+| Section                         | no. calls |  wall time | % of total |
++---------------------------------+-----------+------------+------------+
+| Assemble Stokes system          |       175 |       373s |        16% |
+| Assemble composition system     |       135 |       321s |        14% |
+| Assemble temperature system     |        45 |      99.3s |       4.4% |
+| Build Stokes preconditioner     |       175 |       275s |        12% |
+| Build composition preconditioner|       135 |      8.84s |      0.39% |
+| Build temperature preconditioner|        45 |     0.472s |         0% |
+| Solve Stokes system             |       175 |       895s |        39% |
+| Solve composition system        |       135 |      6.78s |       0.3% |
+| Solve temperature system        |        45 |     0.243s |         0% |
+| Free surface                    |        45 |      34.6s |       1.5% |
+| Initialization                  |         1 |      1.99s |         0% |
+| Postprocessing                  |        45 |       144s |       6.3% |
+| Setup dof systems               |         1 |      1.13s |         0% |
+| Setup initial conditions        |         1 |      2.43s |      0.11% |
++---------------------------------+-----------+------------+------------+
+
+*** Timestep 45:  t=224840 years
+   Solving mesh velocity system... 7 iterations.
+   Solving temperature system... 0 iterations.
+   Solving rigid_bottom system ... 9 iterations.
+   Solving low_friction system ... 9 iterations.
+   Solving plastic_cover system ... 9 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+10 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 0.000521741
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+3 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 2: 0.000165474
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 3: 9.26003e-05
+
+
+   Postprocessing:
+     Compositions min/max/mass: -0.002883/1.027/1.45e+07 // -0.02657/1.003/1.612e+07 // -0.003167/1.027/1.517e+08
+     Temperature min/avg/max:   293 K, 296.8 K, 293 K
+     RMS, max velocity:         0.00187 m/year, 0.002 m/year
+     Writing graphical output:  output/solution/solution-00022
+
+
+
++---------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start    |  2.32e+03s |            |
+|                                             |            |            |
+| Section                         | no. calls |  wall time | % of total |
++---------------------------------+-----------+------------+------------+
+| Assemble Stokes system          |       178 |       379s |        16% |
+| Assemble composition system     |       138 |       328s |        14% |
+| Assemble temperature system     |        46 |       102s |       4.4% |
+| Build Stokes preconditioner     |       178 |       280s |        12% |
+| Build composition preconditioner|       138 |      9.04s |      0.39% |
+| Build temperature preconditioner|        46 |     0.482s |         0% |
+| Solve Stokes system             |       178 |       912s |        39% |
+| Solve composition system        |       138 |      6.93s |       0.3% |
+| Solve temperature system        |        46 |     0.249s |         0% |
+| Free surface                    |        46 |      35.4s |       1.5% |
+| Initialization                  |         1 |      1.99s |         0% |
+| Postprocessing                  |        46 |       150s |       6.5% |
+| Setup dof systems               |         1 |      1.13s |         0% |
+| Setup initial conditions        |         1 |      2.43s |       0.1% |
++---------------------------------+-----------+------------+------------+
+
+*** Timestep 46:  t=229840 years
+   Solving mesh velocity system... 7 iterations.
+   Solving temperature system... 0 iterations.
+   Solving rigid_bottom system ... 9 iterations.
+   Solving low_friction system ... 9 iterations.
+   Solving plastic_cover system ... 9 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+18 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 0.000545573
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+3 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 2: 0.000230948
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+3 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 3: 0.000119244
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+2 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 4: 8.29629e-05
+
+
+   Postprocessing:
+     Compositions min/max/mass: -0.002904/1.027/1.45e+07 // -0.02657/1.003/1.612e+07 // -0.00314/1.027/1.518e+08
+     Temperature min/avg/max:   293 K, 296.9 K, 293 K
+     RMS, max velocity:         0.00187 m/year, 0.002 m/year
+
+
+
++---------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start    |  2.38e+03s |            |
+|                                             |            |            |
+| Section                         | no. calls |  wall time | % of total |
++---------------------------------+-----------+------------+------------+
+| Assemble Stokes system          |       182 |       388s |        16% |
+| Assemble composition system     |       141 |       335s |        14% |
+| Assemble temperature system     |        47 |       104s |       4.4% |
+| Build Stokes preconditioner     |       182 |       286s |        12% |
+| Build composition preconditioner|       141 |      9.23s |      0.39% |
+| Build temperature preconditioner|        47 |     0.492s |         0% |
+| Solve Stokes system             |       182 |       937s |        39% |
+| Solve composition system        |       141 |      7.09s |       0.3% |
+| Solve temperature system        |        47 |     0.254s |         0% |
+| Free surface                    |        47 |      36.1s |       1.5% |
+| Initialization                  |         1 |      1.99s |         0% |
+| Postprocessing                  |        47 |       150s |       6.3% |
+| Setup dof systems               |         1 |      1.13s |         0% |
+| Setup initial conditions        |         1 |      2.43s |       0.1% |
++---------------------------------+-----------+------------+------------+
+
+*** Timestep 47:  t=234839 years
+   Solving mesh velocity system... 7 iterations.
