@@ -1,0 +1,207 @@
+# This cookbook is based off Ruh et al. (2013), which examines thrust
+# sheet development with 3D visco-plastic simulations. While the cookbook
+# is a 2D simulation, the boundary conditions, initial conditions,
+# geometry material properties are based heavily off those in Ruh et al. 
+# For additional information, see Ruh et al. 2013 and references therein:
+#   J.B. Ruh, T. Gerya nd J.-P. Burg (2013), G3, v.14(4), p. 1131-1155
+
+####  Global parameters
+set Dimension                              = 2
+set Start time                             = 0
+set End time                               = 1e6
+set Use years in output instead of seconds = true
+set Linear solver tolerance                = 1e-7
+set Nonlinear solver scheme                = iterated Stokes
+set Nonlinear solver tolerance             = 1e-4
+set Max nonlinear iterations               = 10
+set Number of cheap Stokes solver steps    = 0
+set CFL number                             = 0.1
+set Maximum time step                      = 5e3
+set Output directory                       = output-Thrust_Sheet
+set Timing output frequency                = 1
+set Pressure normalization                 = no
+
+# Model geometry and initial grid (30x6 km, 0.25 km spacing)
+subsection Geometry model
+  set Model name = box
+  subsection Box
+    set X repetitions = 120
+    set Y repetitions = 60
+    set X extent      = 30e3
+    set Y extent      = 15e3
+  end
+end
+
+# Mesh refinement specifications (no mesh refinement, 
+# but the coarse mesh is already 480x24, see above)
+subsection Mesh refinement
+  set Initial adaptive refinement        = 0
+  set Initial global refinement          = 2
+  set Minimum refinement level           = 0
+  set Refinement fraction                = 0.95
+  set Coarsening fraction                = 0.05
+  set Time steps between mesh refinement = 0
+  set Strategy                                 = strain rate, slope
+  set Normalize individual refinement criteria = true
+  set Refinement criteria merge operation      = max
+  set Run postprocessors on initial refinement = true
+end
+
+
+# Q2Q1 element
+subsection Discretization
+  set Composition polynomial degree     = 2
+  set Stokes velocity polynomial degree = 2
+  set Temperature polynomial degree     = 1
+end
+
+
+# Boundary classifications
+# Composition: fixed on bottom, top and right sides
+# Velocity: free surface on top, defined by functions on left, right and bottom
+# Temperature: fixed on all sides (constant throughout model)
+subsection Model settings
+  set Fixed composition boundary indicators   = bottom, top, right
+  set Fixed temperature boundary indicators   = bottom, top, left, right
+  set Prescribed velocity boundary indicators = left x: function, right x: function, bottom: function
+  set Tangential velocity boundary indicators = top
+end
+
+# Velocity on left, right and bottom  boundaries are characterized by functions
+# The horizontal (x-) and vertical velocity on the bottom and right walls is
+# 1 cm/yr, while the vertical velocity is unconstrained (i.e., 'free).
+# The vertical velocity along the left wall (x = 0 km) is 1 cm/yr at the base
+# (y = 0 km) and gradates lineary to 0 cm/yr at and above a height 1 km.
+subsection Boundary velocity model
+  subsection Function
+    set Variable names      = x,y
+    set Function constants  = cm=0.01, year=1, vel=-0.20
+    set Function expression = if (x==0e3 && y>0.5e3, if(y<=1e3, vel*cm/year * (1.e3-y)/1.e3, 0), vel*cm/year); 0 
+  end
+end
+
+
+# Number and names of compositional fields
+# The four compositional fields represent the upper crust, lower crust, mantle
+# and a 'seed' placed in the mantle to help localize deformation.
+subsection Compositional fields
+  set Number of fields = 4
+  set Names of fields = rigid_bottom, low_friction, plastic_cover, sticky_air
+end
+
+
+# Spatial domain of different compositional fields
+# The model contains 3 continous horizontal layers:
+#   Rigid bottom layer  (0.5 km thick, 1st layer)
+#   Low friction layer  (0.5 km thick, 2nd layer)
+#   Plastic cover layer (5.0 km thick, 3rd layer)
+#   Sticky air layer    (9.0 km thick, 4th layer)
+subsection Initial composition model
+  set Model name = function
+  subsection Function
+    set Variable names      = x,y
+    set Function expression = if(y<0.5e3, 1, 0); \
+                              if(y>=0.5e3 && y<=1.0e3, 1, 0); \
+                              if(y>1.0e3  && y<=6.0e3, 1, 0); \
+                              if(y>6.0e3, 1, 0)
+  end
+end
+
+# Composition boundary conditions
+subsection Boundary composition model
+  set Model name = initial composition
+end
+
+# Temperature boundary conditions (constant temperature throughout model)
+subsection Boundary temperature model
+  set List of model names = box
+  subsection Box
+    set Bottom temperature = 293
+    set Top temperature    = 293
+    set Left temperature   = 293
+    set Right temperature  = 293
+  end
+end
+
+# Initial temperature field (constant temperature throughout model)
+subsection Initial temperature model
+  set Model name = function
+  subsection Function
+    set Variable names      = x,y
+    set Function constants  =
+    set Function expression = 293
+  end
+end
+
+# Material model
+# Rheology: Linear viscous and Drucker Prager Plasticity
+subsection Material model
+  set Model name = visco plastic
+
+  subsection Visco Plastic
+
+    # Reference temperature and viscosity
+    set Reference temperature = 293
+    set Reference viscosity   = 1e20
+    
+    # The minimum strain-rate helps limit large viscosities values that arise
+    # as the strain-rate approaches zero.
+    # The reference strain-rate is used on the first non-linear iteration
+    # of the first time step when the velocity has not been determined yet. 
+    set Minimum strain rate = 1.e-20
+    set Reference strain rate = 1.e-15
+
+    # Limit the viscosity with minimum and maximum values
+    set Minimum viscosity = 1e18
+    set Maximum viscosity = 1e23
+
+    # All layers have the same density
+    set Densities = 2400, 2400, 2400, 2400, 1  
+
+    # Harmonic viscosity averaging
+    set Viscosity averaging scheme = maximum composition
+
+    # Choose to have the viscosity (pre-yield) follow a dislocation
+    # diffusion or composite flow law. The pre-yield viscosities are
+    # linearly, so either option will work. Here, we choose a dislocation
+    # creep flow with values adjusted so that the pre-yield viscosity is 
+    # a fixed value (e.g., no strain-rate, temperature or pressure dependence)
+    set Viscous flow law = dislocation
+
+    # The linear (pre-yield) viscosity (v) of all rock layers is 1.e23 Pa s,
+    # while sticky has a viscosity of 1.e18 Pa s.
+    # The viscosity is defined  with the prefactor term (A): v = 0.5*(A^-1)
+    set Prefactors for dislocation creep          = 5.e-24, 5.e-24, 5.e-24, 5.e-24, 5.e-19 
+    set Stress exponents for dislocation creep    = 1.
+    set Activation energies for dislocation creep = 0.
+    set Activation volumes for dislocation creep  = 0.
+
+    # Plasticity parameters. The background and rigid bottom layer
+    # have a large cohesion set that they never undergo yielding.
+    # The low friction layer by definitioin has a lower friction 
+    # angle (and cohesion) than the plastic cover layers. 
+    set Angles of internal friction =    0.,    0.,   10.0,   30.,    0. 
+    set Cohesions                   = 1.e20, 1.e20,  0.1e6, 20.e6, 1.e20
+
+  end
+# Gravity model
+subsection Gravity model
+  set Model name = vertical
+
+  subsection Vertical
+    set Magnitude = 9.81
+  end
+end
+
+
+# Post processing
+subsection Postprocess
+  set List of postprocessors = basic statistics, composition statistics, temperature statistics, velocity statistics, visualization
+  subsection Visualization
+    set List of output variables = density, viscosity, strain rate
+    set Output format = vtu
+    set Time between graphical output = 1e4
+    set Interpolate output = true
+  end
+end
+
