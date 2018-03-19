@@ -184,6 +184,8 @@ subsection Material model
     set Cohesions                   = 1.e20, 1.e20,  0.1e6, 20.e6, 1.e20
 
   end
+end
+
 # Gravity model
 subsection Gravity model
   set Model name = vertical
