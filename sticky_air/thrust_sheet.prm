@@ -1,7 +1,7 @@
 # This cookbook is based off Ruh et al. (2013), which examines thrust
 # sheet development with 3D visco-plastic simulations. While the cookbook
 # is a 2D simulation, the boundary conditions, initial conditions,
-# geometry material properties are based heavily off those in Ruh et al. 
+# geometry material properties are based heavily off those in Ruh et al.
 # For additional information, see Ruh et al. 2013 and references therein:
 #   J.B. Ruh, T. Gerya nd J.-P. Burg (2013), G3, v.14(4), p. 1131-1155
 
@@ -10,20 +10,55 @@ set Dimension                              = 2
 set Start time                             = 0
 set End time                               = 1e6
 set Use years in output instead of seconds = true
-set Linear solver tolerance                = 1e-7
-set Nonlinear solver scheme                = iterated Stokes
-set Nonlinear solver tolerance             = 1e-4
-set Max nonlinear iterations               = 10
-set Number of cheap Stokes solver steps    = 0
 set CFL number                             = 0.1
-set Maximum time step                      = 5e3
 set Output directory                       = output-Thrust_Sheet
-set Timing output frequency                = 1
 set Pressure normalization                 = no
+set Timing output frequency                = 10
+
+# Note that the Linear/Nonlinear solver tolerance should be sufficiently
+# strict to avoid numerical instabilities.
+set Nonlinear solver scheme                          = single Advection, iterated Stokes
+set Nonlinear solver tolerance                       = 1e-7
+set Max nonlinear iterations                         = 100
+
+subsection Solver parameters
+  subsection Stokes solver parameters
+    set Linear solver tolerance                      = 1e-8
+    set Number of cheap Stokes solver steps          = 0
+
+# A higher restart length makes the solver more robust for large viscosity
+# contrasts.
+    set GMRES solver restart length                  = 200
+  end
+end
+
+subsection Discretization
+  set Composition polynomial degree                  = 2
+  set Temperature polynomial degree                  = 2
+  set Stokes velocity polynomial degree              = 2
+  set Use locally conservative discretization        = false
+end
+
+# For restarting the model
+set Resume computation                               = auto
+subsection Checkpointing
+  set Steps between checkpoint                       = 20
+end
+
+# Gravity model
+subsection Gravity model
+  set Model name                                     = vertical
+  subsection Vertical
+    set Magnitude                                    = 9.81
+  end
+end
+
+### Parameters describing the model
 
 # Model geometry and initial grid (30x6 km, 0.25 km spacing)
 subsection Geometry model
   set Model name = box
+
   subsection Box
     set X repetitions = 120
     set Y repetitions = 60
@@ -32,40 +67,28 @@ subsection Geometry model
   end
 end
 
-# Mesh refinement specifications (no mesh refinement, 
+# Mesh refinement specifications (no mesh refinement,
 # but the coarse mesh is already 480x24, see above)
 subsection Mesh refinement
   set Initial adaptive refinement        = 0
   set Initial global refinement          = 2
-  set Minimum refinement level           = 0
-  set Refinement fraction                = 0.95
-  set Coarsening fraction                = 0.05
+  # set Minimum refinement level           = 0
+  # set Refinement fraction                = 0.95
+  # set Coarsening fraction                = 0.05
   set Time steps between mesh refinement = 0
-  set Strategy                                 = strain rate, slope
-  set Normalize individual refinement criteria = true
-  set Refinement criteria merge operation      = max
-  set Run postprocessors on initial refinement = true
+  # set Strategy                                 = strain rate, slope
+  # set Normalize individual refinement criteria = true
+  # set Refinement criteria merge operation      = max
+  # set Run postprocessors on initial refinement = true
 end
 
-
-# Q2Q1 element
-subsection Discretization
-  set Composition polynomial degree     = 2
-  set Stokes velocity polynomial degree = 2
-  set Temperature polynomial degree     = 1
-end
 
 
 # Boundary classifications
 # Composition: fixed on bottom, top and right sides
 # Velocity: free surface on top, defined by functions on left, right and bottom
 # Temperature: fixed on all sides (constant throughout model)
-subsection Model settings
-  set Fixed composition boundary indicators   = bottom, top, right
-  set Fixed temperature boundary indicators   = bottom, top, left, right
-  set Prescribed velocity boundary indicators = left x: function, right x: function, bottom: function
-  set Tangential velocity boundary indicators = top
-end
+
 
 # Velocity on left, right and bottom  boundaries are characterized by functions
 # The horizontal (x-) and vertical velocity on the bottom and right walls is
@@ -73,14 +96,27 @@ end
 # The vertical velocity along the left wall (x = 0 km) is 1 cm/yr at the base
 # (y = 0 km) and gradates lineary to 0 cm/yr at and above a height 1 km.
 subsection Boundary velocity model
-  subsection Function
-    set Variable names      = x,y
-    set Function constants  = cm=0.01, year=1, vel=-0.20
-    set Function expression = if (x==0e3 && y>0.5e3, if(y<=1e3, vel*cm/year * (1.e3-y)/1.e3, 0), vel*cm/year); 0 
-  end
+  set Prescribed velocity boundary indicators = left x: function, right x: function, bottom: function
+    subsection Function
+      set Variable names      = x,y
+      set Function constants  = cm=0.01, year=1, vel=-0.20
+      set Function expression = if (x==0e3 && y>0.5e3, if(y<=1e3, vel*cm/year * (1.e3-y)/1.e3, 0), vel*cm/year); 0
+    end
 end
 
+# The top boundary is open (zero traction), which allows the sticky air to
+# flow freely through it as topography develops along the wedge. Additional
+# testing revealed that using a true free surface leads to significant mesh
+# distortion and associated numerical instabilities.
+subsection Boundary traction model
+  set Prescribed traction boundary indicators        = top: zero traction
+end
 
+# Composition boundary conditions
+subsection Boundary composition model
+  set Fixed composition boundary indicators   = bottom, top, right
+  set Model name = initial composition
+end
 # Number and names of compositional fields
 # The four compositional fields represent the upper crust, lower crust, mantle
 # and a 'seed' placed in the mantle to help localize deformation.
@@ -107,29 +143,28 @@ subsection Initial composition model
   end
 end
 
-# Composition boundary conditions
-subsection Boundary composition model
-  set Model name = initial composition
+# Temperature boundary conditions
+subsection Boundary temperature model
+  set Fixed temperature boundary indicators   = bottom, top, left, right
+  set List of model names                     = initial temperature
 end
 
-# Temperature boundary conditions (constant temperature throughout model)
-subsection Boundary temperature model
-  set List of model names = box
-  subsection Box
-    set Bottom temperature = 293
-    set Top temperature    = 293
-    set Left temperature   = 293
-    set Right temperature  = 293
+# Initial temperature field
+subsection Initial temperature model
+  set Model name                                     = function
+  subsection Function
+    set Function expression                          = 293
   end
 end
 
-# Initial temperature field (constant temperature throughout model)
-subsection Initial temperature model
-  set Model name = function
-  subsection Function
-    set Variable names      = x,y
-    set Function constants  =
-    set Function expression = 293
+# The  discontinuous composition bound preserving limiter produces sharp
+# interfaces between compositional layers.
+subsection Discretization
+  set Use discontinuous composition discretization   = true
+  subsection Stabilization parameters
+      set Use limiter for discontinuous composition solution = true
+      set Global composition maximum                 = 1, 1, 1, 1
+      set Global composition minimum                 = 0, 0, 0, 0
   end
 end
 
@@ -143,11 +178,11 @@ subsection Material model
     # Reference temperature and viscosity
     set Reference temperature = 293
     set Reference viscosity   = 1e20
-    
+
     # The minimum strain-rate helps limit large viscosities values that arise
     # as the strain-rate approaches zero.
     # The reference strain-rate is used on the first non-linear iteration
-    # of the first time step when the velocity has not been determined yet. 
+    # of the first time step when the velocity has not been determined yet.
     set Minimum strain rate = 1.e-20
     set Reference strain rate = 1.e-15
 
@@ -156,7 +191,7 @@ subsection Material model
     set Maximum viscosity = 1e23
 
     # All layers have the same density
-    set Densities = 2400, 2400, 2400, 2400, 1  
+    set Densities = 2400, 2400, 2400, 2400, 1
 
     # Harmonic viscosity averaging
     set Viscosity averaging scheme = maximum composition
@@ -164,36 +199,28 @@ subsection Material model
     # Choose to have the viscosity (pre-yield) follow a dislocation
     # diffusion or composite flow law. The pre-yield viscosities are
     # linearly, so either option will work. Here, we choose a dislocation
-    # creep flow with values adjusted so that the pre-yield viscosity is 
+    # creep flow with values adjusted so that the pre-yield viscosity is
     # a fixed value (e.g., no strain-rate, temperature or pressure dependence)
     set Viscous flow law = dislocation
 
     # The linear (pre-yield) viscosity (v) of all rock layers is 1.e23 Pa s,
     # while sticky has a viscosity of 1.e18 Pa s.
     # The viscosity is defined  with the prefactor term (A): v = 0.5*(A^-1)
-    set Prefactors for dislocation creep          = 5.e-24, 5.e-24, 5.e-24, 5.e-24, 5.e-19 
+    set Prefactors for dislocation creep          = 5.e-24, 5.e-24, 5.e-24, 5.e-24, 5.e-19
     set Stress exponents for dislocation creep    = 1.
     set Activation energies for dislocation creep = 0.
     set Activation volumes for dislocation creep  = 0.
 
     # Plasticity parameters. The background and rigid bottom layer
     # have a large cohesion set that they never undergo yielding.
-    # The low friction layer by definitioin has a lower friction 
-    # angle (and cohesion) than the plastic cover layers. 
-    set Angles of internal friction =    0.,    0.,   10.0,   30.,    0. 
+    # The low friction layer by definitioin has a lower friction
+    # angle (and cohesion) than the plastic cover layers.
+    set Angles of internal friction =    0.,    0.,   10.0,   30.,    0.
     set Cohesions                   = 1.e20, 1.e20,  0.1e6, 20.e6, 1.e20
 
   end
 end
 
-# Gravity model
-subsection Gravity model
-  set Model name = vertical
-
-  subsection Vertical
-    set Magnitude = 9.81
-  end
-end
 
 
 # Post processing
